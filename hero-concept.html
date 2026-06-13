@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Concept Hero Athlètes</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Temporary styles for the concept validation */
+      .hero-concept-container {
+        padding: 40px 0;
+        background: #f7f9fc;
+        min-height: 100vh;
+      }
+
+      .athletes-hero-v2 {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 600px;
+        margin: 0 var(--page-gutter);
+        padding: 80px 40px;
+        border-radius: 32px;
+        overflow: hidden;
+        color: #fff;
+        text-align: center;
+        background: 
+          radial-gradient(circle at 15% 15%, rgba(8, 124, 255, 0.25), transparent 40%),
+          radial-gradient(circle at 85% 85%, rgba(249, 0, 144, 0.25), transparent 40%),
+          #050f2f;
+      }
+
+      /* Animated Grainy Texture */
+      .athletes-hero-v2::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url('assets/home-final/backstage-texture.png');
+        background-size: cover;
+        opacity: 0.15;
+        mix-blend-mode: overlay;
+        pointer-events: none;
+      }
+
+      /* Floating Glows */
+      .glow-blue {
+        position: absolute;
+        top: -10%;
+        left: 20%;
+        width: 400px;
+        height: 400px;
+        background: var(--blue);
+        filter: blur(120px);
+        opacity: 0.3;
+        border-radius: 50%;
+      }
+
+      .glow-magenta {
+        position: absolute;
+        bottom: -10%;
+        right: 15%;
+        width: 450px;
+        height: 450px;
+        background: var(--magenta);
+        filter: blur(130px);
+        opacity: 0.25;
+        border-radius: 50%;
+      }
+
+      .hero-v2-content {
+        position: relative;
+        z-index: 10;
+        max-width: 900px;
+      }
+
+      .hero-v2-content h1 {
+        font-family: "Arial Black", sans-serif;
+        font-size: 72px;
+        font-weight: 950;
+        line-height: 1;
+        margin: 24px 0;
+        letter-spacing: -2px;
+        background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-v2-content p {
+        font-size: 22px;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 650px;
+        margin: 0 auto 48px;
+        line-height: 1.4;
+      }
+
+      /* Integrated Glass Search */
+      .glass-search {
+        display: flex;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        padding: 8px;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+      }
+
+      .glass-search input {
+        flex: 1;
+        background: transparent;
+        border: 0;
+        padding: 0 24px;
+        color: #fff;
+        font-size: 16px;
+        outline: none;
+      }
+
+      .glass-search input::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      .glass-search .btn-cta {
+        height: 48px;
+        padding: 0 32px;
+        font-size: 15px;
+      }
+
+      .hero-badges {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 32px;
+      }
+
+      .badge-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 6px 16px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero-concept-container">
+      <section class="athletes-hero-v2">
+        <div class="glow-blue"></div>
+        <div class="glow-magenta"></div>
+        
+        <div class="hero-v2-content">
+          <p class="kicker">Milano Cortina 2026</p>
+          <h1>Les visages de l'excellence.</h1>
+          <p>
+            Explorez les portraits des athlètes qui feront vibrer le monde. 
+            Suivez leur quête de l'or olympique.
+          </p>
+
+          <div class="glass-search">
+            <input type="text" placeholder="Rechercher un athlète, un sport..." />
+            <button class="btn-cta">Rechercher</button>
+          </div>
+
+          <div class="hero-badges">
+            <span class="badge-item">#SkiAlpin</span>
+            <span class="badge-item">#Hockey</span>
+            <span class="badge-item">#Snowboard</span>
+            <span class="badge-item">#Patinage</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
