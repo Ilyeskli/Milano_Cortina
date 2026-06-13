@@ -1853,3 +1853,29 @@ input {
   border: 1px solid rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(8px);
 }
+
+/* ============================================================
+   ui-skills hygiene (plain-CSS adaptation)
+   ============================================================ */
+.hero-copy h1,
+.ticket-hero h1,
+.section-head h2,
+.backstage-strip h2,
+.cta-banner h2,
+.feature-row h3,
+.news-card h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+.session-price,
+.cat-price,
+.total-row strong,
+.qty-count { font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
