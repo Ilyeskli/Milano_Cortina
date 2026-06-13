@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>News - Milano Cortina 2026</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-news">
+    <header class="mc-header">
+      <a class="mc-logo" href="index.html" aria-label="Milano Cortina 2026">
+        <img src="assets/home-final/logo-milano-cortina.png" alt="" />
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="mc-nav" aria-label="Navigation principale">
+        <a href="athletes.html">Athlètes</a>
+        <a href="index.html#epreuves">Épreuves</a>
+        <a href="news.html" class="active" aria-current="page">News</a>
+        <a href="billetterie.html">Billetterie</a>
+        <a href="index.html#sites">Médailles</a>
+        <a href="index.html#backstages">Backstages</a>
+      </nav>
+
+      <div class="mc-actions">
+        <button class="flag-button" type="button" aria-label="Langue française">
+          <img src="assets/home-final/france.png" alt="" />
+        </button>
+        <a class="login-link" href="#login">Se connecter</a>
+        <a class="signup-link" href="#login">S'inscrire</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero header -->
+      <section class="ticket-hero" aria-labelledby="news-hero-title">
+        <div class="ticket-hero-copy">
+          <p class="kicker">News</p>
+          <h1 id="news-hero-title">Les dernières actualités des Jeux.</h1>
+          <p>
+            Suivez les annonces, les histoires d'athlètes, les temps forts des préparatifs et les
+            actualités officielles de Milano Cortina 2026.
+          </p>
+        </div>
+      </section>
+
+      <!-- News section with filters and grid -->
+      <section class="section section-news" id="news" aria-labelledby="news-title">
+        <div class="section-head news-head">
+          <p class="kicker">Actualités</p>
+          <h2 id="news-title">Toutes les news des Jeux.</h2>
+          <p>
+            Découvrez les dernières informations sur les athlètes, les sites, la billetterie et les coulisses de Milano Cortina 2026.
+          </p>
+        </div>
+
+        <!-- Category filters -->
+        <div class="filter-pills" role="group" aria-label="Filtrer par catégorie">
+          <button type="button" class="filter-pill is-active" data-filter="all">Tous</button>
+          <button type="button" class="filter-pill" data-filter="athletes">Athlètes</button>
+          <button type="button" class="filter-pill" data-filter="territoires">Territoires</button>
+          <button type="button" class="filter-pill" data-filter="backstages">Backstages</button>
+          <button type="button" class="filter-pill" data-filter="organisation">Organisation</button>
+          <button type="button" class="filter-pill" data-filter="billetterie">Billetterie</button>
+        </div>
+
+        <!-- News grid -->
+        <div class="news-grid" id="news-grid">
+          <article class="news-card news-card-main" data-category="athletes">
+            <p class="feature-label">Athlètes</p>
+            <h3>Les profils à suivre avant l'ouverture des Jeux.</h3>
+            <p>Découvrez les athlètes qui feront briller Milano Cortina 2026 et suivez leur préparation en direct.</p>
+            <a class="white-pill" href="news-article-01.html">Lire</a>
+            <span class="article-date">12 juin 2026</span>
+          </article>
+
+          <div class="news-side">
+            <article class="news-card news-card-small" data-category="territoires">
+              <p class="feature-label">Territoires</p>
+              <h3>Milan et Cortina préparent l'accueil des fans.</h3>
+              <span class="article-date">10 juin 2026</span>
+              <a class="white-pill" href="news-article-02.html">Lire</a>
+            </article>
+
+            <article class="news-card news-card-small alt" data-category="backstages">
+              <p class="feature-label">Backstages</p>
+              <h3>Dans les coulisses des cérémonies d'ouverture.</h3>
+              <span class="article-date">8 juin 2026</span>
+              <a class="white-pill" href="news-article-03.html">Lire</a>
+            </article>
+          </div>
+
+          <article class="news-card news-card-small" data-category="organisation">
+            <p class="feature-label">Organisation</p>
+            <h3>Le calendrier complet des épreuves est dévoilé.</h3>
+            <p>Consultez les dates, horaires et sites de toutes les disciplines des Jeux d'hiver 2026.</p>
+            <span class="article-date">5 juin 2026</span>
+            <a class="white-pill" href="news-article-04.html">Lire</a>
+          </article>
+
+          <article class="news-card news-card-small alt" data-category="billetterie">
+            <p class="feature-label">Billetterie</p>
+            <h3>Nouvelles catégories de billets disponibles.</h3>
+            <p>Des places pour toutes les bourses avec des offres premium et des tarifs fans accessibles.</p>
+            <span class="article-date">3 juin 2026</span>
+            <a class="white-pill" href="news-article-05.html">Lire</a>
+          </article>
+
+          <article class="news-card news-card-small" data-category="athletes">
+            <p class="feature-label">Athlètes</p>
+            <h3>L'équipe de France dévoile sa sélection.</h3>
+            <p>La liste des sportifs français qualifiés pour les Jeux de Milano Cortina est officialisée.</p>
+            <span class="article-date">1er juin 2026</span>
+            <a class="white-pill" href="news-article-06.html">Lire</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="login">
+      <div class="footer-inner">
+        <img src="assets/home-final/logo-milano-cortina.png" alt="Milano Cortina 2026" />
+        <div class="footer-columns">
+          <div>
+            <h2>Milano Cortina 2026</h2>
+            <p>Le point d'entrée officiel pour suivre les Jeux, les épreuves, les sites et les coulisses.</p>
+          </div>
+          <nav aria-label="Liens de pied de page">
+            <a href="index.html#epreuves">Épreuves</a>
+            <a href="billetterie.html">Billetterie</a>
+            <a href="index.html#sites">Sites</a>
+            <a href="news.html">News</a>
+            <a href="index.html#backstages">Backstages</a>
+          </nav>
+        </div>
+        <form class="newsletter">
+          <label for="email">Recevoir les actualités</label>
+          <div>
+            <input id="email" type="email" placeholder="email@exemple.com" />
+            <button type="submit">S'inscrire</button>
+          </div>
+        </form>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="news.js"></script>
+  </body>
+</html>
