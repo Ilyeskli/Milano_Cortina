@@ -4,36 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Milano Cortina 2026 - Billetterie</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=47" />
   </head>
   <body class="page-billetterie">
-    <header class="mc-header">
-      <a class="mc-logo" href="index.html" aria-label="Milano Cortina 2026">
-        <img src="assets/home-final/logo-milano-cortina.png" alt="" />
-      </a>
-
-      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="mc-nav" aria-label="Navigation principale">
-        <a href="athletes.html">Athlètes</a>
-        <a href="index.html#epreuves">Épreuves</a>
-            <a href="news.html">News</a>
-        <a href="billetterie.html" class="active" aria-current="page">Billetterie</a>
-        <a href="index.html#sites">Médailles</a>
-        <a href="index.html#backstages">Backstages</a>
-      </nav>
-
-      <div class="mc-actions">
-        <button class="flag-button" type="button" aria-label="Langue française">
-          <img src="assets/home-final/france.png" alt="" />
-        </button>
-        <a class="login-link" href="#login">Se connecter</a>
-        <a class="signup-link" href="#login">S'inscrire</a>
-      </div>
-    </header>
+    <div id="site-header"></div>
+    <script src="site-header.js?v=4"></script>
 
     <main id="top">
       <!-- Hero header -->
@@ -113,7 +88,7 @@
         <!-- Sessions + booking panel -->
         <div class="book-grid">
           <div class="session-list">
-            <article class="session-card" data-session="Ski alpin — Descente Hommes" data-meta="12 fév. · Cortina d'Ampezzo · 11:00">
+            <article class="session-card" data-session="Ski alpin — Descente Hommes" data-meta="12 fév. · Cortina d'Ampezzo · 11:00" data-sport="Ski alpin" data-date="12 février" data-site="Cortina d'Ampezzo" data-type="Compétition">
               <div class="session-date"><strong>12</strong><span>FÉV</span></div>
               <div class="session-body">
                 <h3>Ski alpin — Descente Hommes</h3>
@@ -126,7 +101,7 @@
               </div>
             </article>
 
-            <article class="session-card" data-session="Patinage de vitesse — 1500 m" data-meta="13 fév. · Milano · 14:30">
+            <article class="session-card" data-session="Patinage de vitesse — 1500 m" data-meta="13 fév. · Milano · 14:30" data-sport="Patinage" data-date="13 février" data-site="Milano" data-type="Compétition">
               <div class="session-date"><strong>13</strong><span>FÉV</span></div>
               <div class="session-body">
                 <h3>Patinage de vitesse — 1500 m</h3>
@@ -139,7 +114,7 @@
               </div>
             </article>
 
-            <article class="session-card" data-session="Hockey sur glace — Quart de finale" data-meta="14 fév. · Milano · 20:00">
+            <article class="session-card" data-session="Hockey sur glace — Quart de finale" data-meta="14 fév. · Milano · 20:00" data-sport="Hockey" data-date="14 février" data-site="Milano" data-type="Compétition">
               <div class="session-date"><strong>14</strong><span>FÉV</span></div>
               <div class="session-body">
                 <h3>Hockey sur glace — Quart de finale</h3>
@@ -152,7 +127,7 @@
               </div>
             </article>
 
-            <article class="session-card is-soldout" data-session="Saut à ski — Grand tremplin" data-meta="15 fév. · Predazzo · 17:00">
+            <article class="session-card is-soldout" data-session="Saut à ski — Grand tremplin" data-meta="15 fév. · Predazzo · 17:00" data-sport="Saut à ski" data-date="15 février" data-site="Predazzo" data-type="Compétition">
               <div class="session-date"><strong>15</strong><span>FÉV</span></div>
               <div class="session-body">
                 <h3>Saut à ski — Grand tremplin</h3>
@@ -305,44 +280,24 @@
         </div>
       </section>
 
-      <!-- CTA banner -->
-      <section class="cta-banner" aria-labelledby="cta-title">
-        <div class="cta-banner-copy">
-          <p class="feature-label">Billetterie officielle</p>
-          <h2 id="cta-title">Prêt à vivre les Jeux ?</h2>
+      <!-- CTA card (same design as the home reservation card) -->
+      <article class="home-ticket-card cta-card" aria-labelledby="cta-title">
+        <div>
+          <span>Billetterie officielle</span>
+          <h3 id="cta-title">Prêt à vivre les Jeux ?</h3>
           <p>Réservez dès maintenant vos places et préparez votre venue à Milano Cortina 2026.</p>
         </div>
-        <a class="white-pill" href="#top">Réserver maintenant</a>
-      </section>
+        <div class="home-ticket-actions">
+          <a href="#top">Voir les sessions</a>
+          <a class="home-button home-button-glass" href="#top">Réserver maintenant</a>
+        </div>
+      </article>
     </main>
 
-    <footer class="footer" id="login">
-      <div class="footer-inner">
-        <img src="assets/home-final/logo-milano-cortina.png" alt="Milano Cortina 2026" />
-        <div class="footer-columns">
-          <div>
-            <h2>Milano Cortina 2026</h2>
-            <p>Le point d'entrée officiel pour suivre les Jeux, les épreuves, les sites et les coulisses.</p>
-          </div>
-          <nav aria-label="Liens de pied de page">
-            <a href="index.html#epreuves">Épreuves</a>
-            <a href="billetterie.html">Billetterie</a>
-            <a href="index.html#sites">Sites</a>
-        <a href="news.html">News</a>
-            <a href="index.html#backstages">Backstages</a>
-          </nav>
-        </div>
-        <form class="newsletter">
-          <label for="email">Recevoir les actualités</label>
-          <div>
-            <input id="email" type="email" placeholder="email@exemple.com" />
-            <button type="submit">S'inscrire</button>
-          </div>
-        </form>
-      </div>
-    </footer>
+    <div id="site-footer"></div>
+    <script src="site-footer.js?v=1"></script>
 
-    <script src="script.js"></script>
-    <script src="billetterie.js"></script>
+    <script src="script.js?v=13"></script>
+    <script src="billetterie.js?v=3"></script>
   </body>
 </html>

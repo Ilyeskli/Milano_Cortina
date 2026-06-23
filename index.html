@@ -3,91 +3,93 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Milano Cortina 2026 - Home Page Final</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Milano Cortina 2026 — Jeux Olympiques et Paralympiques d'hiver</title>
+    <meta
+      name="description"
+      content="Vivez les Jeux Olympiques et Paralympiques d'hiver de Milano Cortina 2026 : sports, athlètes, sites de compétition, billetterie et actualités, du 6 au 22 février 2026."
+    />
+    <link rel="icon" href="assets/home-final/logo-milano-cortina.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:title" content="Milano Cortina 2026 — Jeux Olympiques d'hiver" />
+    <meta
+      property="og:description"
+      content="Sports, athlètes, sites, billetterie et actualités des Jeux d'hiver de Milano Cortina 2026."
+    />
+    <meta property="og:image" content="assets/home-final/home-page-final-reference.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="styles.css?v=47" />
   </head>
-  <body>
-
-    <header class="mc-header">
-      <a class="mc-logo" href="#top" aria-label="Milano Cortina 2026">
-        <img src="assets/home-final/logo-milano-cortina.png" alt="" />
-      </a>
-
-      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="mc-nav" aria-label="Navigation principale">
-        <a href="athletes.html">Athlètes</a>
-        <a href="#epreuves">Épreuves</a>
-            <a href="news.html">News</a>
-        <a href="billetterie.html">Billetterie</a>
-        <a href="#medailles">Médailles</a>
-        <a href="#backstages">Backstages</a>
-      </nav>
-
-      <div class="mc-actions">
-        <button class="flag-button" type="button" aria-label="Langue française">
-          <img src="assets/home-final/france.png" alt="" />
-        </button>
-        <a class="login-link" href="#login">Se connecter</a>
-        <a class="signup-link" href="#login">S'inscrire</a>
-      </div>
-    </header>
+  <body class="home-page">
+    <div id="site-header"></div>
+    <script src="site-header.js?v=4"></script>
 
     <main id="top">
-      <section class="hero-card" aria-labelledby="hero-title">
-        <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
-        <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
-        <div class="hero-track" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="hero-copy">
-          <h1 id="hero-title">Vibrez au rythme des Jeux d'hiver.</h1>
+      <section class="home-hero" aria-labelledby="hero-title">
+        <video
+          class="home-hero-video"
+          muted
+          loop
+          playsinline
+          preload="none"
+          poster="assets/figma-raw/hero-still.jpg"
+          aria-hidden="true"
+        >
+          <source src="assets/figma-raw/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div class="home-hero-scrim" aria-hidden="true"></div>
+        <button class="hero-play" type="button" aria-label="Lire la vidéo">
+          <svg class="icon hero-play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          <svg class="icon hero-pause-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+          </svg>
+        </button>
+        <div class="home-hero-copy">
+          <h1 id="hero-title">Vibrez au rythme des Jeux d’hiver.</h1>
           <p>
             Découvrez les sports, les athlètes, les sites de compétition et les temps forts de
             Milano Cortina 2026 à travers une expérience digitale immersive, fluide et pensée pour
             vivre les Jeux au plus près.
           </p>
-          <a class="dark-cta" href="#epreuves">Voir le programme</a>
+          <a class="home-button home-button-dark" href="#epreuves">Voir le programme</a>
         </div>
       </section>
 
-      <span id="athletes" class="anchor"></span>
-
-      <section class="section section-ticket" id="billetterie" aria-labelledby="ticket-title">
-        <div class="section-head">
-          <p class="kicker">Billetterie</p>
+      <section class="home-section home-section-ticket" id="billetterie" aria-labelledby="ticket-title">
+        <div class="home-section-head">
+          <p class="home-kicker">Billetterie</p>
           <h2 id="ticket-title">Préparez votre venue et réservez votre expérience.</h2>
           <p>
-            Une section billetterie claire, rassurante et premium pour accéder rapidement aux
-            compétitions, cérémonies, informations pratiques et catégories de places.
+            Compétitions, cérémonies, hospitalités : réservez vos places et organisez votre venue
+            en quelques clics, en toute sérénité.
           </p>
         </div>
 
-        <article class="wide-feature ticket-feature">
+        <article class="home-ticket-card">
           <div>
-            <p class="feature-label">Billetterie officielle</p>
+            <span>Officiel</span>
             <h3>Réserver ses places pour Milano Cortina 2026</h3>
             <p>
-              Accédez à la billetterie officielle, découvrez les catégories de places et préparez
-              votre séjour depuis un espace simple, lisible et sécurisé.
+              Accédez à la billetterie officielle, découvrez les catégories de places, les dates
+              clés d’ouverture et toutes les informations nécessaires pour organiser votre venue.
             </p>
           </div>
-          <a class="white-pill" href="billetterie.html">Je réserve</a>
+          <div class="home-ticket-actions">
+            <a href="billetterie.html">Informations pratiques</a>
+            <a class="home-button home-button-glass" href="billetterie.html">Je réserve</a>
+          </div>
         </article>
 
-        <div class="feature-row">
+        <div class="home-feature-row">
           <article>
             <h3>Compétitions</h3>
             <p>Choisissez vos sports, vos sessions et vos sites de compétition.</p>
           </article>
           <article>
             <h3>Cérémonies</h3>
-            <p>Retrouvez les temps forts officiels d'ouverture et de clôture.</p>
+            <p>Retrouvez les temps forts officiels d’ouverture et de clôture.</p>
           </article>
           <article>
             <h3>Hospitalités</h3>
@@ -96,66 +98,107 @@
         </div>
       </section>
 
-      <section class="section section-events" id="epreuves" aria-labelledby="events-title">
-        <div class="section-head">
-          <p class="kicker">Épreuves</p>
-          <h2 id="events-title">Explorez toutes les disciplines des Jeux d'hiver.</h2>
+      <section class="home-section home-section-events" id="epreuves" aria-labelledby="events-title">
+        <div class="home-section-head">
+          <p class="home-kicker">Épreuves</p>
+          <h2 id="events-title">Explorez les épreuves et les disciplines.</h2>
           <p>
-            Une entrée visuelle directe dans chaque univers sportif, du ski alpin aux sports de
-            glace, avec des repères simples pour découvrir les épreuves.
+            Huit sports, seize disciplines, cent seize épreuves réparties sur cinq pôles du nord de
+            l’Italie. Plongez au cœur de la compétition.
           </p>
         </div>
 
-        <div class="marquee-stack" aria-label="Disciplines olympiques">
-          <div class="sport-marquee sport-marquee-one">
-            <article class="sport-card sport-blue"><span>Ski alpin</span></article>
-            <article class="sport-card sport-black"><span>Hockey sur glace</span></article>
-            <article class="sport-card sport-green"><span>Snowboard</span></article>
-            <article class="sport-card sport-pink"><span>Patinage artistique</span></article>
-            <article class="sport-card sport-blue"><span>Biathlon</span></article>
-            <article class="sport-card sport-black"><span>Curling</span></article>
-          </div>
-          <div class="sport-marquee sport-marquee-two">
-            <article class="sport-card sport-pink"><span>Bobsleigh</span></article>
-            <article class="sport-card sport-blue"><span>Ski de fond</span></article>
-            <article class="sport-card sport-green"><span>Short-track</span></article>
-            <article class="sport-card sport-black"><span>Luge</span></article>
-            <article class="sport-card sport-pink"><span>Saut à ski</span></article>
-          </div>
+        <div class="home-sport-showcase home-sport-cards" aria-label="Aperçu des épreuves">
+          <article class="home-sport-card sport-speed-small">
+            <span>Milano</span>
+            <h3>Patinage de vitesse</h3>
+          </article>
+          <article class="home-sport-card home-sport-card-wide sport-bob">
+            <span>Cortina d'Ampezzo</span>
+            <h3>Bobsleigh</h3>
+          </article>
+          <article class="home-sport-card home-sport-card-wide sport-ski">
+            <span>Bormio | Cortina d’Ampezzo</span>
+            <h3>Ski alpin</h3>
+          </article>
+          <article class="home-sport-card sport-biathlon">
+            <span>Anterselva</span>
+            <h3>Biathlon</h3>
+          </article>
+          <article class="home-sport-card sport-hockey">
+            <span>Milan</span>
+            <h3>Hockey sur glace</h3>
+          </article>
+          <article class="home-sport-card sport-luge">
+            <span>Cortina d'Ampezzo</span>
+            <h3>Luge</h3>
+          </article>
+          <article class="home-sport-card sport-jump">
+            <span>Predazzo</span>
+            <h3>Saut à ski</h3>
+          </article>
+          <article class="home-sport-card sport-skeleton">
+            <span>Cortina d’Ampezzo</span>
+            <h3>Skeleton</h3>
+          </article>
         </div>
 
-        <div class="feature-row">
+        <div class="home-feature-row">
           <article>
-            <h3>Sports de neige</h3>
-            <p>Explorez les disciplines alpines, nordiques et freestyle.</p>
+            <h3>8 sports</h3>
+            <p>Du patinage de vitesse au bobsleigh, huit sports olympiques au programme.</p>
           </article>
           <article>
-            <h3>Sports de glace</h3>
-            <p>Retrouvez les compétitions en aréna et sur piste glacée.</p>
+            <h3>16 disciplines</h3>
+            <p>Seize disciplines réparties entre les arènes de glace et les sommets alpins.</p>
           </article>
           <article>
-            <h3>Programme</h3>
-            <p>Consultez les horaires, les formats et les lieux des épreuves.</p>
+            <h3>116 épreuves</h3>
+            <p>Cent seize épreuves pour décrocher l’or, du 6 au 22 février 2026.</p>
           </article>
         </div>
       </section>
 
-      <section class="backstage-strip" id="backstages" aria-labelledby="backstage-title">
-        <div class="backstage-copy">
-          <p class="feature-label">Inside Games</p>
-          <h2 id="backstage-title">Olympic Backstages</h2>
-          <p>
-            Une immersion dans les métiers, les préparatifs et les opérations qui donnent vie aux
-            Jeux, des coulisses techniques aux histoires humaines.
-          </p>
-          <a class="white-pill" href="#backstages">Explorer</a>
+      <section class="home-backstage" id="backstages" aria-labelledby="backstage-title">
+        <div class="home-backstage-card">
+            <div class="home-backstage-decor" aria-hidden="true">
+              <img class="home-backstage-base" src="assets/figma-raw/backstage-base.png" alt="" />
+              <div class="home-backstage-overlay-wrap">
+                <img class="home-backstage-overlay" src="assets/figma-raw/backstage-overlay.png" alt="" />
+              </div>
+              <div class="home-backstage-tint"></div>
+              <img class="home-backstage-bg2" src="assets/figma-raw/backstage-texture-2.png" alt="" />
+              <img class="home-backstage-texture" src="assets/figma-raw/backstage-texture-2.png" alt="" />
+            </div>
+          <div class="home-backstage-main">
+            <h2 id="backstage-title">Olympic<br />Backstages</h2>
+            <p>
+              Olympic Backstages proposera une immersion dans les métiers qui rendent les Jeux
+              possibles : production, sécurité, design, logistique, innovation, médias,
+              coordination et opérations terrain.
+            </p>
+            <div class="home-backstage-tags" aria-label="Thématiques">
+              <span>Métiers</span>
+              <span>Reportages</span>
+              <span>Interviews</span>
+              <span>Parcours</span>
+              <span>Making-of</span>
+            </div>
+          </div>
+          <div class="home-backstage-side">
+            <h3>Explorez les métiers de l’ombre</h3>
+            <p>
+              Depuis le site principal, accédez à une plateforme éditoriale dédiée à celles et ceux
+              qui construisent les Jeux en coulisses.
+            </p>
+            <a class="home-backstage-button" href="news.html">Accéder à la plateforme →</a>
+          </div>
         </div>
-        <div class="backstage-card" aria-hidden="true"></div>
       </section>
 
-      <section class="section section-sites" id="sites" aria-labelledby="sites-title">
-        <div class="section-head">
-          <p class="kicker">Sites</p>
+      <section class="home-section home-section-sites" id="sites" aria-labelledby="sites-title">
+        <div class="home-section-head home-section-head-wide">
+          <p class="home-kicker">Sites</p>
           <h2 id="sites-title">Découvrez les sites de compétition et les territoires hôtes.</h2>
           <p>
             Des arènes urbaines de Milan aux paysages alpins de Cortina, chaque site raconte une
@@ -163,94 +206,101 @@
           </p>
         </div>
 
-        <div class="site-tabs" aria-label="Territoires">
-          <button type="button" class="active">Milano</button>
-          <button type="button">Cortina</button>
-          <button type="button">Valtellina</button>
-          <button type="button">Val di Fiemme</button>
-          <button type="button">Verona</button>
+        <div class="home-site-tabs" role="tablist" aria-label="Territoires hôtes">
+          <button
+            type="button"
+            class="home-site-tab"
+            data-site="assets/sites/milano.jpg"
+            data-label="Milano et ses arènes urbaines"
+            aria-pressed="false"
+          >
+            Milano
+          </button>
+          <button
+            type="button"
+            class="home-site-tab active"
+            data-site="assets/sites/cortina.jpg"
+            data-label="Cortina d’Ampezzo enneigée au pied des Dolomites"
+            aria-pressed="true"
+          >
+            Cortina d'Ampezzo
+          </button>
+          <button
+            type="button"
+            class="home-site-tab"
+            data-site="assets/sites/valtellina.jpg"
+            data-label="La Valtellina et ses vallées alpines"
+            aria-pressed="false"
+          >
+            Valtellina
+          </button>
         </div>
 
-        <article class="site-visual">
-          <div>
-            <p class="feature-label">Territoires hôtes</p>
-            <h3>Entre ville, glace et sommets alpins.</h3>
-          </div>
-        </article>
+        <div
+          class="home-sites-image"
+          id="sites-image"
+          role="img"
+          aria-label="Cortina d’Ampezzo enneigée au pied des Dolomites"
+          style="background-image: url('assets/sites/cortina.jpg')"
+        ></div>
 
-        <div class="feature-row">
+        <div class="home-feature-row home-feature-row-badges">
           <article>
-            <h3>Carte des sites</h3>
-            <p>Visualisez les lieux clés et les connexions entre territoires.</p>
+            <span class="home-kicker">Lombardie</span>
+            <h3>Milano</h3>
+            <p>Cérémonie d’ouverture, patinage et hockey au cœur de la métropole.</p>
           </article>
           <article>
-            <h3>Accès</h3>
-            <p>Préparez vos trajets entre les arènes, gares et zones fans.</p>
+            <span class="home-kicker">Vénétie</span>
+            <h3>Cortina d'Ampezzo</h3>
+            <p>Ski alpin, bobsleigh, luge et skeleton dans le décor des Dolomites.</p>
           </article>
           <article>
-            <h3>Expérience locale</h3>
-            <p>Découvrez les paysages, villes et stations qui accueillent les Jeux.</p>
+            <span class="home-kicker">Valteline</span>
+            <h3>Valtellina &amp; vallées</h3>
+            <p>Ski de fond, biathlon et saut à ski au plus près des sommets alpins.</p>
           </article>
         </div>
       </section>
 
-      <section class="section section-news" id="news" aria-labelledby="news-title">
-        <div class="section-head news-head">
-          <p class="kicker">News</p>
+      <section class="home-section home-section-news" id="news" aria-labelledby="news-title">
+        <div class="home-section-head">
+          <p class="home-kicker">Actualités</p>
           <h2 id="news-title">Les dernières news des Jeux.</h2>
           <p>
-            Suivez les annonces, les histoires d'athlètes, les temps forts des préparatifs et les
-            actualités officielles de Milano Cortina 2026.
+            Résultats, coulisses, cérémonies et portraits : suivez tous les temps forts de
+            Milano Cortina 2026.
           </p>
         </div>
 
-        <div class="news-layout">
-          <article class="news-card news-card-main">
-            <p class="feature-label">À la une</p>
-            <h3>Les Jeux d'hiver dévoilent une nouvelle étape de leur préparation.</h3>
-            <p>Organisation, sites, expériences fans et calendrier : les informations clés à retenir.</p>
-            <a class="white-pill" href="#news">Lire</a>
-          </article>
-          <div class="news-side">
-            <article class="news-card news-card-small">
-              <p class="feature-label">Athlètes</p>
-              <h3>Les profils à suivre avant l'ouverture des Jeux.</h3>
-            </article>
-            <article class="news-card news-card-small alt">
-              <p class="feature-label">Territoires</p>
-              <h3>Milan et Cortina préparent l'accueil des fans.</h3>
-            </article>
+        <div class="home-news-grid">
+          <a class="home-news-card home-news-card-main" href="news-article-01.html">
+            <span class="home-news-tag">Bilan</span>
+            <h3>La Norvège domine, l’Italie réalise ses meilleurs Jeux</h3>
+            <p>Retour sur deux semaines de compétition : le tableau des médailles et les moments forts.</p>
+            <span class="home-news-cta">Voir l’article →</span>
+          </a>
+          <div class="home-news-side">
+            <a class="home-news-card home-news-card-small home-news-card-skate" href="news-article-02.html">
+              <span class="home-news-tag">Cérémonies</span>
+              <h3>San Siro embrase l’ouverture des Jeux</h3>
+              <p>Une cérémonie d’ouverture spectaculaire dans le stade mythique de Milan.</p>
+              <span class="home-news-cta">Voir l’article →</span>
+            </a>
+            <a class="home-news-card home-news-card-small home-news-card-more" href="news.html">
+              <span class="home-news-tag">Actualités</span>
+              <h3>Toutes nos news</h3>
+              <p>Résultats, coulisses, portraits et temps forts : suivez toute l’actualité des Jeux.</p>
+              <span class="home-news-cta home-news-cta-wide">Accéder aux dernières actualités →</span>
+            </a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer" id="login">
-      <div class="footer-inner">
-        <img src="assets/home-final/logo-milano-cortina.png" alt="Milano Cortina 2026" />
-        <div class="footer-columns">
-          <div>
-            <h2>Milano Cortina 2026</h2>
-            <p>Le point d'entrée officiel pour suivre les Jeux, les épreuves, les sites et les coulisses.</p>
-          </div>
-          <nav aria-label="Liens de pied de page">
-            <a href="#epreuves">Épreuves</a>
-            <a href="billetterie.html">Billetterie</a>
-            <a href="#sites">Sites</a>
-        <a href="news.html">News</a>
-            <a href="#backstages">Backstages</a>
-          </nav>
-        </div>
-        <form class="newsletter">
-          <label for="email">Recevoir les actualités</label>
-          <div>
-            <input id="email" type="email" placeholder="email@exemple.com" />
-            <button type="submit">S'inscrire</button>
-          </div>
-        </form>
-      </div>
-    </footer>
+    <div id="site-footer"></div>
+    <script src="site-footer.js?v=1"></script>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=13"></script>
   </body>
 </html>

@@ -4,190 +4,275 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Athlètes - Milano Cortina 2026</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=47" />
   </head>
   <body class="page-athletes">
-    <header class="mc-header">
-      <a class="mc-logo" href="index.html" aria-label="Milano Cortina 2026">
-        <img src="assets/home-final/logo-milano-cortina.png" alt="" />
-      </a>
-
-      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="mc-nav" aria-label="Navigation principale">
-        <a href="athletes.html" class="active">Athlètes</a>
-        <a href="index.html#epreuves">Épreuves</a>
-        <a href="index.html#news">News</a>
-        <a href="billetterie.html">Billetterie</a>
-        <a href="index.html#sites">Médailles</a>
-        <a href="index.html#backstages">Backstages</a>
-      </nav>
-
-      <div class="mc-actions">
-        <button class="flag-button" type="button" aria-label="Langue française">
-          <img src="assets/home-final/france.png" alt="" />
-        </button>
-        <a class="login-link" href="#login">Se connecter</a>
-        <a class="signup-link" href="#login">S'inscrire</a>
-      </div>
-    </header>
+    <div id="site-header"></div>
+    <script src="site-header.js?v=4"></script>
 
     <main>
-      <section class="hero-card athletes-hero-card">
-        <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
-        <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
-        <div class="hero-track" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
+      <!-- Page header banner -->
+      <section class="med-pageheader">
+        <nav class="med-breadcrumb" aria-label="Fil d'ariane">
+          <a href="index.html">Accueil</a>
+          <span aria-hidden="true">/</span>
+          <span>Athlètes</span>
+        </nav>
+        <h1>Athlètes</h1>
+      </section>
+
+      <!-- Stats -->
+      <section class="section med-stats" aria-label="Chiffres clés">
+        <div class="med-stat">
+          <p class="med-stat-num">2 884</p>
+          <p class="med-stat-label">Athlètes engagés</p>
         </div>
-        <div class="hero-copy">
-          <p class="kicker kicker-white">Portraits</p>
-          <h1>Les visages de 2026.</h1>
-          <p>
-            Rencontrez les athlètes qui repoussent les limites de l'excellence. Suivez leurs
-            parcours, leurs victoires et leur préparation pour les Jeux d'hiver.
-          </p>
+        <div class="med-stat">
+          <p class="med-stat-num">92</p>
+          <p class="med-stat-label">Nations représentées</p>
+        </div>
+        <div class="med-stat">
+          <p class="med-stat-num">418</p>
+          <p class="med-stat-label">Athlètes médaillés</p>
+        </div>
+        <div class="med-stat">
+          <p class="med-stat-num">7</p>
+          <p class="med-stat-label">Records battus</p>
         </div>
       </section>
 
-      <section class="section section-search-athletes">
-        <div class="search-bar-container">
-          <div class="search-input-wrapper">
-            <input type="text" placeholder="Rechercher un athlète, un pays, un sport..." />
-            <button type="button" class="btn-cta">Rechercher</button>
+      <!-- À la une (same design as the home article cards) -->
+      <section class="section med-section" aria-label="À la une">
+        <article
+          class="ath-featured"
+          style="background-image: url(&quot;assets/athletes/jeanmonnot.jpg&quot;);"
+          role="img"
+          aria-label="Lou Jeanmonnot"
+        >
+          <div class="ath-featured-body">
+            <span class="home-news-tag">À la une</span>
+            <h2>Lou Jeanmonnot</h2>
+            <p class="ath-featured-meta">
+              <span class="flag">🇫🇷</span> Biathlon · France
+            </p>
+            <p>
+              Tenante du gros globe de cristal et quadruple championne du monde,
+              la Française fait partie des grandes favorites des Jeux.
+            </p>
+            <ul
+              class="ath-medals"
+              aria-label="Médailles en championnats du monde"
+            >
+              <li><span class="dot dot-gold"></span>4</li>
+              <li><span class="dot dot-silver"></span>0</li>
+              <li><span class="dot dot-bronze"></span>3</li>
+            </ul>
+            <a class="home-news-cta" href="profil.html?athlete=jeanmonnot">Voir le profil →</a>
           </div>
+        </article>
+      </section>
+
+      <!-- Athlètes grid -->
+      <section class="section med-section" aria-labelledby="ath-title">
+        <div class="section-head">
+          <p class="kicker">Athlètes</p>
+          <h2 id="ath-title">Les visages des Jeux d'hiver.</h2>
+          <p>
+            Découvrez les athlètes qui marquent Milano Cortina 2026, sport par
+            sport, médaille après médaille.
+          </p>
         </div>
 
-        <div class="filter-pills">
+        <div
+          class="filter-pills ath-filters"
+          role="group"
+          aria-label="Filtrer par discipline"
+        >
           <button type="button" class="filter-pill is-active">Tous</button>
-          <button type="button" class="filter-pill">Légendes</button>
-          <button type="button" class="filter-pill">Espoirs</button>
-          <button type="button" class="filter-pill">Étoiles montantes</button>
+          <button type="button" class="filter-pill">Biathlon</button>
+          <button type="button" class="filter-pill">Hockey sur glace</button>
+          <button type="button" class="filter-pill">Patinage artistique</button>
+          <button type="button" class="filter-pill">Saut à ski</button>
+          <button type="button" class="filter-pill">Ski acrobatique</button>
+          <button type="button" class="filter-pill">Ski alpin</button>
+          <button type="button" class="filter-pill">Ski de fond</button>
+          <button type="button" class="filter-pill">Snowboard</button>
         </div>
 
-        <div class="filter-dropdowns">
-          <div class="dropdown" data-dropdown>
-            <button type="button" class="dropdown-toggle">
-              <span class="dropdown-label">Tous les sports</span>
-              <span class="dropdown-caret">▾</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><label><input type="radio" name="sport" checked /> Tous les sports</label></li>
-              <li><label><input type="radio" name="sport" /> Ski alpin</label></li>
-              <li><label><input type="radio" name="sport" /> Hockey sur glace</label></li>
-              <li><label><input type="radio" name="sport" /> Patinage artistique</label></li>
-              <li><label><input type="radio" name="sport" /> Snowboard</label></li>
-            </ul>
-          </div>
-          <div class="dropdown" data-dropdown>
-            <button type="button" class="dropdown-toggle">
-              <span class="dropdown-label">Tous les pays</span>
-              <span class="dropdown-caret">▾</span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><label><input type="radio" name="pays" checked /> Tous les pays</label></li>
-              <li><label><input type="radio" name="pays" /> Italie</label></li>
-              <li><label><input type="radio" name="pays" /> France</label></li>
-              <li><label><input type="radio" name="pays" /> Norvège</label></li>
-              <li><label><input type="radio" name="pays" /> Canada</label></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-athletes-grid">
-        <div class="athletes-grid">
-          <article class="athlete-card">
-            <div class="athlete-image" style="background-image: url('assets/home-final/news-small-b.png')">
-              <span class="athlete-badge">Star</span>
+        <div class="ath-grid">
+          <a
+            class="ath-card"
+            href="profil.html?athlete=shiffrin"
+            style="
+              background-image: url(&quot;assets/athletes/shiffrin.jpg&quot;);
+            "
+          >
+            <span class="ath-badge"
+              ><span class="flag">🇺🇸</span> États-Unis</span
+            >
+            <div class="ath-card-body">
+              <h3>Mikaela Shiffrin</h3>
+              <p>Ski alpin</p>
             </div>
-            <div class="athlete-info">
-              <p class="athlete-sport">Ski Alpin</p>
-              <h3>Sofia Goggia</h3>
-              <p class="athlete-country">Italie</p>
-              <a href="#" class="btn-select">Voir le profil</a>
+          </a>
+          <a
+            class="ath-card"
+            href="profil.html?athlete=odermatt"
+            style="
+              background-image: url(&quot;assets/athletes/odermatt.jpg&quot;);
+            "
+          >
+            <span class="ath-badge"><span class="flag">🇨🇭</span> Suisse</span>
+            <div class="ath-card-body">
+              <h3>Marco Odermatt</h3>
+              <p>Ski alpin</p>
             </div>
-          </article>
-
-          <article class="athlete-card">
-            <div class="athlete-image" style="background-image: url('assets/home-final/news-main.png')"></div>
-            <div class="athlete-info">
-              <p class="athlete-sport">Hockey sur glace</p>
-              <h3>Connor McDavid</h3>
-              <p class="athlete-country">Canada</p>
-              <a href="#" class="btn-select">Voir le profil</a>
+          </a>
+          <a
+            class="ath-card"
+            href="profil.html"
+            style="
+              background-image: url(&quot;assets/athletes/kobayashi.jpg&quot;);
+            "
+          >
+            <span class="ath-badge"><span class="flag">🇯🇵</span> Japon</span>
+            <div class="ath-card-body">
+              <h3>Ryōyū Kobayashi</h3>
+              <p>Saut à ski</p>
             </div>
-          </article>
-
-          <article class="athlete-card">
-            <div class="athlete-image" style="background-image: url('assets/home-final/news-small-a.png')"></div>
-            <div class="athlete-info">
-              <p class="athlete-sport">Snowboard</p>
+          </a>
+          <a
+            class="ath-card"
+            href="profil.html"
+            style="background-image: url(&quot;assets/athletes/gu.jpg&quot;)"
+          >
+            <span class="ath-badge"><span class="flag">🇨🇳</span> Chine</span>
+            <div class="ath-card-body">
+              <h3>Eileen Gu</h3>
+              <p>Ski acrobatique</p>
+            </div>
+          </a>
+          <a
+            class="ath-card"
+            href="profil.html"
+            style="
+              background-image: url(&quot;assets/athletes/klaebo.jpg&quot;);
+            "
+          >
+            <span class="ath-badge"><span class="flag">🇳🇴</span> Norvège</span>
+            <div class="ath-card-body">
+              <h3>Johannes H. Klæbo</h3>
+              <p>Ski de fond</p>
+            </div>
+          </a>
+          <a
+            class="ath-card"
+            href="profil.html"
+            style="background-image: url(&quot;assets/athletes/kim.jpg&quot;)"
+          >
+            <span class="ath-badge"
+              ><span class="flag">🇺🇸</span> États-Unis</span
+            >
+            <div class="ath-card-body">
               <h3>Chloe Kim</h3>
-              <p class="athlete-country">USA</p>
-              <a href="#" class="btn-select">Voir le profil</a>
+              <p>Snowboard</p>
             </div>
-          </article>
+          </a>
+          <a
+            class="ath-card"
+            href="profil.html"
+            style="
+              background-image: url(&quot;assets/athletes/mcdavid.jpg&quot;);
+            "
+          >
+            <span class="ath-badge"><span class="flag">🇨🇦</span> Canada</span>
+            <div class="ath-card-body">
+              <h3>Connor McDavid</h3>
+              <p>Hockey sur glace</p>
+            </div>
+          </a>
+          <a
+            class="ath-card"
+            href="profil.html"
+            style="
+              background-image: url(&quot;assets/athletes/sakamoto.jpg&quot;);
+            "
+          >
+            <span class="ath-badge"><span class="flag">🇯🇵</span> Japon</span>
+            <div class="ath-card-body">
+              <h3>Kaori Sakamoto</h3>
+              <p>Patinage artistique</p>
+            </div>
+          </a>
+        </div>
 
-          <article class="athlete-card">
-            <div class="athlete-image" style="background-image: url('assets/home-final/backstage-card.png')">
-              <span class="athlete-badge">Espoir</span>
-            </div>
-            <div class="athlete-info">
-              <p class="athlete-sport">Biathlon</p>
-              <h3>Johannes Thingnes Bø</h3>
-              <p class="athlete-country">Norvège</p>
-              <a href="#" class="btn-select">Voir le profil</a>
-            </div>
+        <div class="ath-more">
+          <a class="btn-select" href="tous-les-athletes.html"
+            >Voir tous les athlètes →</a
+          >
+        </div>
+      </section>
+
+      <!-- À suivre aujourd'hui -->
+      <section class="section med-section" aria-labelledby="live-title">
+        <div class="section-head">
+          <p class="kicker">En direct</p>
+          <h2 id="live-title">À suivre aujourd'hui</h2>
+          <p>
+            Les rendez-vous à ne pas manquer aujourd'hui, sur la glace et la
+            neige.
+          </p>
+        </div>
+        <div class="ath-live">
+          <article class="ath-live-card">
+            <p class="ath-live-top">
+              <span class="ath-live-badge">● En direct</span
+              ><span class="ath-live-disc">Biathlon</span>
+            </p>
+            <h3>Relais mixte 4×6 km</h3>
+            <p class="ath-live-sub">Ingrid Hansen (NOR) en tête</p>
+          </article>
+          <article class="ath-live-card">
+            <p class="ath-live-top">
+              <span class="ath-live-time">16:00</span
+              ><span class="ath-live-disc">Ski alpin</span>
+            </p>
+            <h3>Descente messieurs</h3>
+            <p class="ath-live-sub">Léo Marchetti (FRA), favori</p>
+          </article>
+          <article class="ath-live-card">
+            <p class="ath-live-top">
+              <span class="ath-live-time">20:00</span
+              ><span class="ath-live-disc">Hockey sur glace</span>
+            </p>
+            <h3>Quart de finale</h3>
+            <p class="ath-live-sub">Canada — Suède</p>
           </article>
         </div>
       </section>
 
-      <section class="backstage-strip athletes-story">
-        <div class="backstage-copy">
-          <p class="feature-label">Grand Portrait</p>
-          <h2>La quête de l'or olympique.</h2>
-          <p>
-            Plongez dans le quotidien de ceux qui se préparent pour le plus grand rendez-vous de leur carrière.
-            Une série exclusive sur les coulisses de la performance.
-          </p>
-          <a class="white-pill" href="#">Lire le dossier</a>
-        </div>
-        <div class="backstage-card" style="background-image: url('assets/home-final/backstage-texture.png')"></div>
+      <!-- CTA Backstages (same design as the home reservation card) -->
+      <section class="section med-section">
+        <article class="home-ticket-card cta-card">
+          <div>
+            <span>En direct</span>
+            <h3>Regardez chaque épreuve en direct</h3>
+            <p>
+              Le streaming officiel des Jeux : compétitions, directs et
+              coulisses, en illimité sur Olympic Backstages.
+            </p>
+          </div>
+          <div class="home-ticket-actions">
+            <a class="home-button home-button-glass" href="index.html#backstages">Accéder au direct</a>
+          </div>
+        </article>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        <img src="assets/home-final/logo-milano-cortina.png" alt="Milano Cortina 2026" />
-        <div class="footer-columns">
-          <div>
-            <h2>Milano Cortina 2026</h2>
-            <p>Le point d'entrée officiel pour suivre les Jeux, les épreuves, les sites et les coulisses.</p>
-          </div>
-          <nav>
-            <a href="index.html#epreuves">Épreuves</a>
-            <a href="billetterie.html">Billetterie</a>
-            <a href="index.html#sites">Sites</a>
-            <a href="index.html#news">News</a>
-            <a href="index.html#backstages">Backstages</a>
-          </nav>
-        </div>
-        <form class="newsletter">
-          <label for="email">Recevoir les actualités</label>
-          <div>
-            <input id="email" type="email" placeholder="email@exemple.com" />
-            <button type="submit">S'inscrire</button>
-          </div>
-        </form>
-      </div>
-    </footer>
+    <div id="site-footer"></div>
+    <script src="site-footer.js?v=1"></script>
 
-    <script src="script.js"></script>
-    <script src="athletes.js"></script>
+    <script src="script.js?v=13"></script>
+    <script src="athletes.js?v=2"></script>
   </body>
 </html>

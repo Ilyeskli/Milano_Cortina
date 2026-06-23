@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Médailles - Milano Cortina 2026</title>
+    <link rel="stylesheet" href="styles.css?v=47" />
+  </head>
+  <body class="page-medailles">
+    <div id="site-header"></div>
+    <script src="site-header.js?v=4"></script>
+
+    <main>
+      <!-- Page header banner -->
+      <section class="med-pageheader">
+        <nav class="med-breadcrumb" aria-label="Fil d'ariane">
+          <a href="index.html">Accueil</a>
+          <span aria-hidden="true">/</span>
+          <span>Médailles</span>
+        </nav>
+        <h1>Médailles</h1>
+      </section>
+
+      <!-- Stats band -->
+      <section class="section med-stats" aria-label="Chiffres clés">
+        <div class="med-stat">
+          <p class="med-stat-num">312</p>
+          <p class="med-stat-label">Médailles distribuées</p>
+        </div>
+        <div class="med-stat">
+          <p class="med-stat-num">28</p>
+          <p class="med-stat-label">Nations médaillées</p>
+        </div>
+        <div class="med-stat">
+          <p class="med-stat-num">109</p>
+          <p class="med-stat-label">Épreuves disputées</p>
+        </div>
+        <div class="med-stat">
+          <p class="med-stat-num">18 / 19</p>
+          <p class="med-stat-label">Journées disputées</p>
+        </div>
+      </section>
+
+      <!-- Podium -->
+      <section class="section med-section med-podium-section" aria-labelledby="podium-title">
+        <div class="section-head">
+          <p class="kicker">Podium</p>
+          <h2 id="podium-title">Le podium des nations</h2>
+          <p>Les trois délégations en tête des Jeux d'hiver de Milano Cortina 2026.</p>
+        </div>
+
+        <div class="med-podium">
+          <article class="podium-card podium-2">
+            <span class="podium-rank">2</span>
+            <span class="podium-flag" aria-hidden="true">🇩🇪</span>
+            <h3>Allemagne</h3>
+            <p class="podium-meta">2<sup>e</sup> · 30 médailles</p>
+            <ul class="podium-medals">
+              <li><span class="dot dot-gold"></span>12</li>
+              <li><span class="dot dot-silver"></span>10</li>
+              <li><span class="dot dot-bronze"></span>8</li>
+            </ul>
+            <p class="podium-total"><span>30</span>Total</p>
+          </article>
+
+          <article class="podium-card podium-1">
+            <span class="podium-rank">1</span>
+            <span class="podium-flag" aria-hidden="true">🇳🇴</span>
+            <h3>Norvège</h3>
+            <p class="podium-meta">1<sup>er</sup> · 38 médailles</p>
+            <ul class="podium-medals">
+              <li><span class="dot dot-gold"></span>16</li>
+              <li><span class="dot dot-silver"></span>12</li>
+              <li><span class="dot dot-bronze"></span>10</li>
+            </ul>
+            <p class="podium-total"><span>38</span>Total</p>
+          </article>
+
+          <article class="podium-card podium-3">
+            <span class="podium-rank">3</span>
+            <span class="podium-flag" aria-hidden="true">🇺🇸</span>
+            <h3>États-Unis</h3>
+            <p class="podium-meta">3<sup>e</sup> · 30 médailles</p>
+            <ul class="podium-medals">
+              <li><span class="dot dot-gold"></span>10</li>
+              <li><span class="dot dot-silver"></span>11</li>
+              <li><span class="dot dot-bronze"></span>9</li>
+            </ul>
+            <p class="podium-total"><span>30</span>Total</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Classement table -->
+      <section class="section med-section" aria-labelledby="classement-title">
+        <div class="section-head">
+          <p class="kicker">Classement</p>
+          <h2 id="classement-title">Tableau complet des médailles</h2>
+          <p>Filtrez par discipline ou par journée pour explorer la performance de chaque nation, en temps réel.</p>
+        </div>
+
+        <p class="med-table-caption">Top 10 mondial · mis à jour en direct</p>
+
+        <div class="filter-pills med-tabs" role="tablist">
+          <button type="button" class="filter-pill is-active">Général</button>
+          <button type="button" class="filter-pill">Par discipline</button>
+          <button type="button" class="filter-pill">Par journée</button>
+        </div>
+
+        <div class="med-table-wrap">
+          <table class="med-table">
+            <thead>
+              <tr>
+                <th class="col-rank">Rang</th>
+                <th class="col-pays">Pays</th>
+                <th class="col-medal">Or</th>
+                <th class="col-medal">Argent</th>
+                <th class="col-medal">Bronze</th>
+                <th class="col-total">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-rank"><span class="rank-badge rank-gold">1</span></td>
+                <td class="col-pays"><span class="flag">🇳🇴</span> Norvège</td>
+                <td class="col-medal">16</td><td class="col-medal">12</td><td class="col-medal">10</td>
+                <td class="col-total">38</td>
+              </tr>
+              <tr>
+                <td class="col-rank"><span class="rank-badge rank-silver">2</span></td>
+                <td class="col-pays"><span class="flag">🇩🇪</span> Allemagne</td>
+                <td class="col-medal">12</td><td class="col-medal">10</td><td class="col-medal">8</td>
+                <td class="col-total">30</td>
+              </tr>
+              <tr>
+                <td class="col-rank"><span class="rank-badge rank-bronze">3</span></td>
+                <td class="col-pays"><span class="flag">🇺🇸</span> États-Unis</td>
+                <td class="col-medal">10</td><td class="col-medal">11</td><td class="col-medal">9</td>
+                <td class="col-total">30</td>
+              </tr>
+              <tr>
+                <td class="col-rank"><span class="rank-badge">4</span></td>
+                <td class="col-pays"><span class="flag">🇨🇦</span> Canada</td>
+                <td class="col-medal">9</td><td class="col-medal">8</td><td class="col-medal">11</td>
+                <td class="col-total">28</td>
+              </tr>
+              <tr>
+                <td class="col-rank"><span class="rank-badge">5</span></td>
+                <td class="col-pays"><span class="flag">🇳🇱</span> Pays-Bas</td>
+                <td class="col-medal">8</td><td class="col-medal">7</td><td class="col-medal">6</td>
+                <td class="col-total">21</td>
+              </tr>
+              <tr>
+                <td class="col-rank"><span class="rank-badge">6</span></td>
+                <td class="col-pays"><span class="flag">🇦🇹</span> Autriche</td>
+                <td class="col-medal">7</td><td class="col-medal">9</td><td class="col-medal">5</td>
+                <td class="col-total">21</td>
+              </tr>
+              <tr>
+                <td class="col-rank"><span class="rank-badge">7</span></td>
+                <td class="col-pays"><span class="flag">🇸🇪</span> Suède</td>
+                <td class="col-medal">7</td><td class="col-medal">6</td><td class="col-medal">4</td>
+                <td class="col-total">17</td>
+              </tr>
+              <tr>
+                <td class="col-rank"><span class="rank-badge">8</span></td>
+                <td class="col-pays"><span class="flag">🇨🇭</span> Suisse</td>
+                <td class="col-medal">6</td><td class="col-medal">5</td><td class="col-medal">7</td>
+                <td class="col-total">18</td>
+              </tr>
+              <tr>
+                <td class="col-rank"><span class="rank-badge">9</span></td>
+                <td class="col-pays"><span class="flag">🇫🇷</span> France</td>
+                <td class="col-medal">5</td><td class="col-medal">6</td><td class="col-medal">8</td>
+                <td class="col-total">19</td>
+              </tr>
+              <tr>
+                <td class="col-rank"><span class="rank-badge">10</span></td>
+                <td class="col-pays"><span class="flag">🇮🇹</span> Italie</td>
+                <td class="col-medal">5</td><td class="col-medal">4</td><td class="col-medal">6</td>
+                <td class="col-total">15</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a class="med-table-more" href="classement.html">Voir le classement complet →</a>
+      </section>
+
+      <!-- Médaille du jour -->
+      <section class="section med-section">
+        <div class="med-highlight">
+          <div class="med-highlight-copy">
+            <p class="kicker kicker-white">Temps fort</p>
+            <h2>Or pour la France en descente messieurs</h2>
+            <p>Léo Marchetti s'impose sur la piste de Cortina d'Ampezzo et offre à la France sa 5<sup>e</sup> médaille d'or de ces Jeux.</p>
+            <a class="white-pill" href="news.html">Voir le résumé</a>
+          </div>
+          <div class="med-highlight-medal" aria-hidden="true">
+            <span class="med-medal-emoji">🥇</span>
+            <span class="med-medal-label">Or</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Par discipline -->
+      <section class="section med-section" aria-labelledby="discipline-title">
+        <div class="section-head">
+          <p class="kicker">Disciplines</p>
+          <h2 id="discipline-title">Médailles par discipline</h2>
+          <p>Le ski alpin et les sports de glace dominent le tableau de ces Jeux d'hiver.</p>
+        </div>
+
+        <ul class="med-bars">
+          <li><span class="bar-label">Ski alpin</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="bar-value">33</span></li>
+          <li><span class="bar-label">Patinage de vitesse</span><span class="bar-track"><span class="bar-fill" style="width:72.7%"></span></span><span class="bar-value">24</span></li>
+          <li><span class="bar-label">Biathlon</span><span class="bar-track"><span class="bar-fill" style="width:66.7%"></span></span><span class="bar-value">22</span></li>
+          <li><span class="bar-label">Ski de fond</span><span class="bar-track"><span class="bar-fill" style="width:60.6%"></span></span><span class="bar-value">20</span></li>
+          <li><span class="bar-label">Snowboard</span><span class="bar-track"><span class="bar-fill" style="width:54.5%"></span></span><span class="bar-value">18</span></li>
+          <li><span class="bar-label">Hockey sur glace</span><span class="bar-track"><span class="bar-fill" style="width:36.4%"></span></span><span class="bar-value">12</span></li>
+          <li><span class="bar-label">Saut à ski</span><span class="bar-track"><span class="bar-fill" style="width:30.3%"></span></span><span class="bar-value">10</span></li>
+          <li><span class="bar-label">Bobsleigh</span><span class="bar-track"><span class="bar-fill" style="width:24.2%"></span></span><span class="bar-value">8</span></li>
+        </ul>
+      </section>
+
+      <!-- CTA -->
+      <section class="section med-section">
+        <div class="med-cta">
+          <div>
+            <h2>Ne manquez aucune épreuve</h2>
+            <p>Suivez les compétitions en direct et vivez chaque médaille au plus près de l'action.</p>
+          </div>
+          <a class="white-pill" href="index.html#epreuves">Voir les épreuves</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="site-footer.js?v=1"></script>
+
+    <script src="script.js?v=13"></script>
+    <script src="medailles.js"></script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Profil athlète - Milano Cortina 2026</title>
+    <link rel="stylesheet" href="styles.css?v=47" />
+  </head>
+  <body class="page-profil">
+    <div id="site-header"></div>
+    <script src="site-header.js?v=4"></script>
+
+    <main>
+      <!-- Page header banner (breadcrumb + name), like the other pages -->
+      <section class="med-pageheader">
+        <nav class="med-breadcrumb" aria-label="Fil d'ariane">
+          <a href="index.html">Accueil</a>
+          <span aria-hidden="true">/</span>
+          <a href="athletes.html">Athlètes</a>
+          <span aria-hidden="true">/</span>
+          <span id="prof-crumb">Mikaela Shiffrin</span>
+        </nav>
+        <h1 id="prof-name">Mikaela Shiffrin</h1>
+      </section>
+
+      <!-- Hero profil -->
+      <section class="prof-hero">
+        <div class="prof-hero-photo" id="prof-photo" style="background-image: url('assets/athletes/shiffrin.jpg')" role="img" aria-label="Mikaela Shiffrin"></div>
+        <div class="prof-hero-body">
+          <p class="kicker" id="prof-kicker">Ski alpin</p>
+          <p class="prof-tagline" id="prof-tagline"><span class="flag">🇺🇸</span> États-Unis · La skieuse la plus titrée de l'histoire du ski alpin.</p>
+          <a class="btn-cta" href="index.html#backstages">Suivre en direct</a>
+        </div>
+      </section>
+
+      <!-- Palmarès -->
+      <section class="section med-stats" id="prof-palmares" aria-label="Palmarès">
+        <div class="med-stat"><p class="med-stat-num">2</p><p class="med-stat-label">Médailles d'or olympiques</p></div>
+        <div class="med-stat"><p class="med-stat-num">5</p><p class="med-stat-label">Gros globes de cristal</p></div>
+        <div class="med-stat"><p class="med-stat-num">100+</p><p class="med-stat-label">Victoires en Coupe du monde</p></div>
+        <div class="med-stat"><p class="med-stat-num">7</p><p class="med-stat-label">Titres de championne du monde</p></div>
+      </section>
+
+      <!-- Parcours -->
+      <section class="section med-section" aria-labelledby="parcours-title">
+        <div class="section-head">
+          <p class="kicker">Parcours</p>
+          <h2 id="parcours-title">Une carrière de légende</h2>
+        </div>
+        <p class="prof-bio" id="prof-bio">
+          Née en 1995 dans le Colorado, Mikaela Shiffrin a réécrit l'histoire du ski alpin. Sacrée championne
+          olympique du slalom à seulement 18 ans en 2014, puis du géant en 2018, elle est devenue la skieuse la plus
+          victorieuse de tous les temps en Coupe du monde, dépassant le mythique record d'Ingemar Stenmark.
+          Polyvalente et d'une régularité hors norme, elle domine le slalom comme le géant depuis plus d'une décennie.
+        </p>
+      </section>
+
+      <!-- Programme -->
+      <section class="section med-section" aria-labelledby="prog-title">
+        <div class="section-head">
+          <p class="kicker">Au programme</p>
+          <h2 id="prog-title">Ses prochaines épreuves</h2>
+        </div>
+        <div class="prof-prog" id="prof-prog">
+          <article class="prof-prog-card"><p class="prof-prog-date">16 fév · 10:00</p><h3>Slalom géant</h3><p class="prof-prog-venue">Cortina d'Ampezzo</p></article>
+          <article class="prof-prog-card"><p class="prof-prog-date">19 fév · 10:00</p><h3>Slalom</h3><p class="prof-prog-venue">Cortina d'Ampezzo</p></article>
+          <article class="prof-prog-card"><p class="prof-prog-date">22 fév · 11:00</p><h3>Combiné par équipes</h3><p class="prof-prog-venue">Cortina d'Ampezzo</p></article>
+        </div>
+      </section>
+
+      <!-- À découvrir -->
+      <section class="section med-section" aria-labelledby="disc-title">
+        <div class="section-head">
+          <p class="kicker">À découvrir</p>
+          <h2 id="disc-title">D'autres athlètes à suivre</h2>
+        </div>
+        <div class="prof-disc" id="prof-disc-grid">
+          <a class="prof-disc-card" href="profil.html?athlete=odermatt" style="background-image: url('assets/athletes/odermatt.jpg')">
+            <span class="prof-disc-badge"><span class="flag">🇨🇭</span> Suisse</span>
+            <div class="prof-disc-body"><h3>Marco Odermatt</h3><p>Ski alpin</p></div>
+          </a>
+          <a class="prof-disc-card" href="profil.html" style="background-image: url('assets/athletes/brignone.jpg')">
+            <span class="prof-disc-badge"><span class="flag">🇮🇹</span> Italie</span>
+            <div class="prof-disc-body"><h3>Federica Brignone</h3><p>Ski alpin</p></div>
+          </a>
+          <a class="prof-disc-card" href="profil.html?athlete=jeanmonnot" style="background-image: url('assets/athletes/jeanmonnot.jpg')">
+            <span class="prof-disc-badge"><span class="flag">🇫🇷</span> France</span>
+            <div class="prof-disc-body"><h3>Lou Jeanmonnot</h3><p>Biathlon</p></div>
+          </a>
+        </div>
+      </section>
+
+      <!-- CTA Backstages (same design as the home reservation card) -->
+      <section class="section med-section">
+        <article class="home-ticket-card cta-card">
+          <div>
+            <span>En direct</span>
+            <h3 id="prof-cta-title">Suivez Mikaela Shiffrin en direct</h3>
+            <p>Chaque épreuve, en live et en replay sur la plateforme Olympic Backstages.</p>
+          </div>
+          <div class="home-ticket-actions">
+            <a class="home-button home-button-glass" href="index.html#backstages">Accéder au direct</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="site-footer.js?v=1"></script>
+
+    <script src="script.js?v=13"></script>
+    <script src="profil.js?v=1"></script>
+  </body>
+</html>
