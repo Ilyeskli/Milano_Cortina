@@ -3876,7 +3876,9 @@ p { text-wrap: pretty; }
   font-size: 16px;
 }
 
-.home-ticket-actions > a:first-child {
+/* Underline only applies to a text-link first child (billetterie/index), never
+   to a glass button (.home-button) used as the sole CTA in our cta-card. */
+.home-ticket-actions > a:first-child:not(.home-button) {
   flex: 1 1 0;
   padding: 0 16px;
   text-decoration: underline;
@@ -4383,61 +4385,7 @@ p { text-wrap: pretty; }
 .med-table-more:hover { text-decoration: underline; }
 
 /* Médaille du jour (highlight) --------------------------------------- */
-.med-highlight {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  padding: 44px 48px;
-  border-radius: 24px;
-  border: 2px solid rgba(255, 255, 255, 0.55);
-  overflow: hidden;
-  background: linear-gradient(105deg, var(--magenta), var(--violet));
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
-}
-.med-highlight::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(120% 160% at 90% -20%, rgba(255, 255, 255, 0.3), transparent 55%);
-  pointer-events: none;
-}
-.med-highlight-copy { position: relative; z-index: 1; max-width: 640px; }
 .kicker-white { background: rgba(255, 255, 255, 0.22); color: #fff; }
-.med-highlight-copy h2 {
-  margin: 0 0 14px;
-  color: #fff;
-  font-family: "Mabry Pro", "Arial Black", Inter, sans-serif;
-  font-size: 36px;
-  font-weight: 950;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
-}
-.med-highlight-copy > p {
-  margin: 0 0 26px;
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.5;
-}
-.med-highlight-medal {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-.med-medal-emoji { font-size: 88px; line-height: 1; }
-.med-medal-label {
-  color: #fff;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
 .white-pill {
   display: inline-flex;
   align-items: center;
@@ -4484,38 +4432,7 @@ p { text-wrap: pretty; }
   font-variant-numeric: tabular-nums;
 }
 
-/* CTA ---------------------------------------------------------------- */
-.med-cta {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-  padding: 40px 48px;
-  border-radius: 24px;
-  border: 2px solid rgba(255, 255, 255, 0.55);
-  overflow: hidden;
-  background: linear-gradient(105deg, var(--magenta), var(--violet));
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
-}
-.med-cta::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(120% 160% at 10% -20%, rgba(255, 255, 255, 0.28), transparent 55%);
-  pointer-events: none;
-}
-.med-cta > div { position: relative; z-index: 1; }
-.med-cta h2 {
-  margin: 0 0 8px;
-  color: #fff;
-  font-family: "Mabry Pro", "Arial Black", Inter, sans-serif;
-  font-size: 32px;
-  font-weight: 950;
-  letter-spacing: -0.02em;
-}
-.med-cta p { margin: 0; color: rgba(255, 255, 255, 0.92); font-size: 16px; font-weight: 500; }
-.med-cta .white-pill { position: relative; z-index: 1; flex-shrink: 0; }
+/* (Médailles highlight + CTA now reuse the canonical .home-ticket-card cta-card.) */
 
 /* Responsive --------------------------------------------------------- */
 @media (max-width: 900px) {
@@ -4523,8 +4440,6 @@ p { text-wrap: pretty; }
   .med-stats { grid-template-columns: repeat(2, 1fr); gap: 28px 0; }
   .med-stat:nth-child(3) { border-left: 0; }
   .med-bars li { grid-template-columns: 150px 1fr 36px; gap: 16px; }
-  .med-highlight, .med-cta { flex-direction: column; align-items: flex-start; text-align: left; }
-  .med-highlight-medal { flex-direction: row; gap: 14px; }
 }
 @media (max-width: 640px) {
   .med-pageheader { padding: 32px 24px 36px; }
@@ -4533,8 +4448,6 @@ p { text-wrap: pretty; }
   .med-stat { padding: 0; border-left: 0 !important; }
   .med-podium { grid-template-columns: 1fr; gap: 18px; }
   .podium-1 { order: -1; padding-top: 40px; }
-  .med-highlight, .med-cta { padding: 32px 24px; }
-  .med-highlight-copy h2 { font-size: 28px; }
   .med-bars li { grid-template-columns: 1fr auto; gap: 6px 14px; }
   .med-bars .bar-label { grid-column: 1 / -1; font-size: 14px; }
   .med-bars .bar-track { grid-column: 1; }
