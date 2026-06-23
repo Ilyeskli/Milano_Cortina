@@ -1,15 +1,17 @@
+// News page — category filter (matches pill text to card badge)
 (() => {
-  const filterPills = Array.from(document.querySelectorAll(".filter-pill"));
-  const newsCards = Array.from(document.querySelectorAll(".news-card"));
+  const pills = Array.from(document.querySelectorAll(".nws-filters-wrap .filter-pill"));
+  const cards = Array.from(document.querySelectorAll(".nws-grid .nws-card"));
 
-  filterPills.forEach((pill) => {
+  pills.forEach((pill) => {
     pill.addEventListener("click", () => {
-      const filter = pill.dataset.filter;
-      filterPills.forEach((p) => p.classList.remove("is-active"));
+      pills.forEach((p) => p.classList.remove("is-active"));
       pill.classList.add("is-active");
-      newsCards.forEach((card) => {
-        const category = card.dataset.category;
-        card.style.display = (filter === "all" || category === filter) ? "" : "none";
+      const filter = pill.textContent.trim().toLowerCase();
+      cards.forEach((card) => {
+        const badge = card.querySelector(".nws-badge");
+        const cat = (badge ? badge.textContent : "").trim().toLowerCase();
+        card.style.display = filter === "tous" || cat === filter ? "" : "none";
       });
     });
   });

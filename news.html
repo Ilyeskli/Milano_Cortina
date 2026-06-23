@@ -4,150 +4,218 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>News - Milano Cortina 2026</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=47" />
   </head>
   <body class="page-news">
-    <header class="mc-header">
-      <a class="mc-logo" href="index.html" aria-label="Milano Cortina 2026">
-        <img src="assets/home-final/logo-milano-cortina.png" alt="" />
-      </a>
-
-      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="mc-nav" aria-label="Navigation principale">
-        <a href="athletes.html">Athlètes</a>
-        <a href="index.html#epreuves">Épreuves</a>
-        <a href="news.html" class="active" aria-current="page">News</a>
-        <a href="billetterie.html">Billetterie</a>
-        <a href="index.html#sites">Médailles</a>
-        <a href="index.html#backstages">Backstages</a>
-      </nav>
-
-      <div class="mc-actions">
-        <button class="flag-button" type="button" aria-label="Langue française">
-          <img src="assets/home-final/france.png" alt="" />
-        </button>
-        <a class="login-link" href="#login">Se connecter</a>
-        <a class="signup-link" href="#login">S'inscrire</a>
-      </div>
-    </header>
+    <div id="site-header"></div>
+    <script src="site-header.js?v=4"></script>
 
     <main id="top">
-      <!-- Hero header -->
-      <section class="ticket-hero" aria-labelledby="news-hero-title">
-        <div class="ticket-hero-copy">
-          <p class="kicker">News</p>
-          <h1 id="news-hero-title">Les dernières actualités des Jeux.</h1>
-          <p>
-            Suivez les annonces, les histoires d'athlètes, les temps forts des préparatifs et les
-            actualités officielles de Milano Cortina 2026.
-          </p>
+      <!-- Intro -->
+      <section class="section nws-intro">
+        <p class="kicker">Actualités</p>
+        <h1>Toute l'actualité des Jeux</h1>
+        <p class="nws-lead">Résultats, coulisses, cérémonies et infos pratiques : suivez tous les temps forts de Milano Cortina 2026.</p>
+      </section>
+
+      <!-- À la une -->
+      <section class="section nws-featured-wrap" aria-label="À la une">
+        <article class="nws-featured">
+          <a class="nws-featured-media" href="news-article-01.html" style="background-image: url('assets/news-img/trecime.jpg')" aria-hidden="true"></a>
+          <div class="nws-featured-body">
+            <span class="nws-badge nws-badge-solid">Compétitions</span>
+            <h2><a href="news-article-01.html">La Norvège domine, l'Italie réalise ses meilleurs Jeux</a></h2>
+            <p>18 titres pour la Norvège, un record historique pour les États-Unis (12 or) et un bilan inédit pour le pays hôte : retour sur le tableau des médailles de Milano Cortina 2026.</p>
+            <p class="nws-meta">22 février 2026 · 4 min de lecture</p>
+            <a class="btn-cta" href="news-article-01.html">Lire l'article</a>
+          </div>
+        </article>
+      </section>
+
+      <!-- Filters -->
+      <section class="section nws-filters-wrap">
+        <div class="filter-pills" role="group" aria-label="Filtrer par catégorie">
+          <button type="button" class="filter-pill is-active">Tous</button>
+          <button type="button" class="filter-pill">Compétitions</button>
+          <button type="button" class="filter-pill">Cérémonies</button>
+          <button type="button" class="filter-pill">Coulisses</button>
+          <button type="button" class="filter-pill">Officiel</button>
+          <button type="button" class="filter-pill">Pratique</button>
         </div>
       </section>
 
-      <!-- News section with filters and grid -->
-      <section class="section section-news" id="news" aria-labelledby="news-title">
-        <div class="section-head news-head">
-          <p class="kicker">Actualités</p>
-          <h2 id="news-title">Toutes les news des Jeux.</h2>
-          <p>
-            Découvrez les dernières informations sur les athlètes, les sites, la billetterie et les coulisses de Milano Cortina 2026.
-          </p>
+      <!-- Grid -->
+      <section class="section nws-grid-wrap" aria-label="Tous les articles">
+        <div class="nws-grid">
+          <a class="nws-card" href="news-article-02.html" style="background-image: url('assets/sites/milano.jpg')">
+            <span class="nws-badge">Cérémonies</span>
+            <div class="nws-card-body">
+              <h3>San Siro embrase l'ouverture des Jeux</h3>
+              <span class="nws-date">6 février 2026</span>
+            </div>
+          </a>
+          <a class="nws-card" href="news-article-03.html" style="background-image: url('assets/sites/valtellina.jpg')">
+            <span class="nws-badge">Compétitions</span>
+            <div class="nws-card-body">
+              <h3>Le ski-alpinisme entre dans l'histoire olympique</h3>
+              <span class="nws-date">21 février 2026</span>
+            </div>
+          </a>
+          <a class="nws-card" href="news-article-04.html" style="background-image: url('assets/news-img/stoat.jpg')">
+            <span class="nws-badge">Coulisses</span>
+            <div class="nws-card-body">
+              <h3>Tina et Milo, les hermines stars des Jeux</h3>
+              <span class="nws-date">12 février 2026</span>
+            </div>
+          </a>
+          <a class="nws-card" href="news-article-05.html" style="background-image: url('assets/sites/cortina.jpg')">
+            <span class="nws-badge">Officiel</span>
+            <div class="nws-card-body">
+              <h3>Cinq pôles, 22 000 km² : la carte des Jeux</h3>
+              <span class="nws-date">30 janvier 2026</span>
+            </div>
+          </a>
+          <a class="nws-card" href="news-article-06.html" style="background-image: url('assets/sites/verona.jpg')">
+            <span class="nws-badge">Cérémonies</span>
+            <div class="nws-card-body">
+              <h3>Vérone clôt les Jeux dans ses arènes antiques</h3>
+              <span class="nws-date">22 février 2026</span>
+            </div>
+          </a>
+          <a class="nws-card" href="news-article-01.html" style="background-image: url('assets/news-img/biathlon.jpg')">
+            <span class="nws-badge">Pratique</span>
+            <div class="nws-card-body">
+              <h3>Comment suivre chaque épreuve en direct</h3>
+              <span class="nws-date">5 février 2026</span>
+            </div>
+          </a>
         </div>
-
-        <!-- Category filters -->
-        <div class="filter-pills" role="group" aria-label="Filtrer par catégorie">
-          <button type="button" class="filter-pill is-active" data-filter="all">Tous</button>
-          <button type="button" class="filter-pill" data-filter="athletes">Athlètes</button>
-          <button type="button" class="filter-pill" data-filter="territoires">Territoires</button>
-          <button type="button" class="filter-pill" data-filter="backstages">Backstages</button>
-          <button type="button" class="filter-pill" data-filter="organisation">Organisation</button>
-          <button type="button" class="filter-pill" data-filter="billetterie">Billetterie</button>
+        <div class="nws-loadmore">
+          <button type="button" class="btn-select">Charger plus d'articles</button>
         </div>
+      </section>
 
-        <!-- News grid -->
-        <div class="news-grid" id="news-grid">
-          <article class="news-card news-card-main" data-category="athletes">
-            <p class="feature-label">Athlètes</p>
-            <h3>Les profils à suivre avant l'ouverture des Jeux.</h3>
-            <p>Découvrez les athlètes qui feront briller Milano Cortina 2026 et suivez leur préparation en direct.</p>
-            <a class="white-pill" href="news-article-01.html">Lire</a>
-            <span class="article-date">12 juin 2026</span>
-          </article>
-
-          <div class="news-side">
-            <article class="news-card news-card-small" data-category="territoires">
-              <p class="feature-label">Territoires</p>
-              <h3>Milan et Cortina préparent l'accueil des fans.</h3>
-              <span class="article-date">10 juin 2026</span>
-              <a class="white-pill" href="news-article-02.html">Lire</a>
-            </article>
-
-            <article class="news-card news-card-small alt" data-category="backstages">
-              <p class="feature-label">Backstages</p>
-              <h3>Dans les coulisses des cérémonies d'ouverture.</h3>
-              <span class="article-date">8 juin 2026</span>
-              <a class="white-pill" href="news-article-03.html">Lire</a>
-            </article>
+      <!-- En vidéo · Backstages -->
+      <section class="section nws-video-wrap">
+        <div class="nws-video">
+          <div class="nws-video-head">
+            <div>
+              <p class="kicker kicker-white">En vidéo · Backstages</p>
+              <h2>Revivez les Jeux en vidéo</h2>
+            </div>
+            <a class="nws-seeall" href="index.html#backstages">Tout voir sur Backstages →</a>
           </div>
-
-          <article class="news-card news-card-small" data-category="organisation">
-            <p class="feature-label">Organisation</p>
-            <h3>Le calendrier complet des épreuves est dévoilé.</h3>
-            <p>Consultez les dates, horaires et sites de toutes les disciplines des Jeux d'hiver 2026.</p>
-            <span class="article-date">5 juin 2026</span>
-            <a class="white-pill" href="news-article-04.html">Lire</a>
-          </article>
-
-          <article class="news-card news-card-small alt" data-category="billetterie">
-            <p class="feature-label">Billetterie</p>
-            <h3>Nouvelles catégories de billets disponibles.</h3>
-            <p>Des places pour toutes les bourses avec des offres premium et des tarifs fans accessibles.</p>
-            <span class="article-date">3 juin 2026</span>
-            <a class="white-pill" href="news-article-05.html">Lire</a>
-          </article>
-
-          <article class="news-card news-card-small" data-category="athletes">
-            <p class="feature-label">Athlètes</p>
-            <h3>L'équipe de France dévoile sa sélection.</h3>
-            <p>La liste des sportifs français qualifiés pour les Jeux de Milano Cortina est officialisée.</p>
-            <span class="article-date">1er juin 2026</span>
-            <a class="white-pill" href="news-article-06.html">Lire</a>
-          </article>
+          <div class="nws-vid-grid">
+            <a class="nws-vid" href="index.html#backstages" style="background-image: url('assets/sites/valtellina.jpg')">
+              <span class="nws-play" aria-hidden="true"></span>
+              <span class="nws-vid-dur">12:30</span>
+              <span class="nws-vid-title">Ski-alpinisme : le sprint en intégralité</span>
+            </a>
+            <a class="nws-vid" href="index.html#backstages" style="background-image: url('assets/news-img/biathlon.jpg')">
+              <span class="nws-play" aria-hidden="true"></span>
+              <span class="nws-vid-dur">08:45</span>
+              <span class="nws-vid-title">Biathlon : le relais mixte décisif</span>
+            </a>
+            <a class="nws-vid" href="index.html#backstages" style="background-image: url('assets/sites/milano.jpg')">
+              <span class="nws-play" aria-hidden="true"></span>
+              <span class="nws-vid-dur">1:45:00</span>
+              <span class="nws-vid-title">La cérémonie d'ouverture à San Siro</span>
+            </a>
+            <a class="nws-vid" href="index.html#backstages" style="background-image: url('assets/sites/verona.jpg')">
+              <span class="nws-play" aria-hidden="true"></span>
+              <span class="nws-vid-dur">06:20</span>
+              <span class="nws-vid-title">Clôture : les plus belles images</span>
+            </a>
+          </div>
         </div>
+      </section>
+
+      <!-- Les plus lus + Le fil -->
+      <section class="section nws-popular">
+        <div class="nws-mostread">
+          <h2>Les plus lus</h2>
+          <ol>
+            <li>
+              <span class="nws-rank">1</span>
+              <div>
+                <span class="nws-tag">Bilan</span>
+                <h3><a href="news-article-01.html">La Norvège domine, l'Italie réalise ses meilleurs Jeux</a></h3>
+                <span class="nws-date">22 février 2026</span>
+              </div>
+            </li>
+            <li>
+              <span class="nws-rank">2</span>
+              <div>
+                <span class="nws-tag">Compétitions</span>
+                <h3><a href="news-article-03.html">Le ski-alpinisme entre dans l'histoire olympique</a></h3>
+                <span class="nws-date">21 février 2026</span>
+              </div>
+            </li>
+            <li>
+              <span class="nws-rank">3</span>
+              <div>
+                <span class="nws-tag">Cérémonies</span>
+                <h3><a href="news-article-02.html">San Siro embrase l'ouverture des Jeux</a></h3>
+                <span class="nws-date">6 février 2026</span>
+              </div>
+            </li>
+            <li>
+              <span class="nws-rank">4</span>
+              <div>
+                <span class="nws-tag">Coulisses</span>
+                <h3><a href="news-article-04.html">Tina et Milo, les hermines stars des Jeux</a></h3>
+                <span class="nws-date">12 février 2026</span>
+              </div>
+            </li>
+            <li>
+              <span class="nws-rank">5</span>
+              <div>
+                <span class="nws-tag">Cérémonies</span>
+                <h3><a href="news-article-06.html">Vérone clôt les Jeux dans ses arènes antiques</a></h3>
+                <span class="nws-date">22 février 2026</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="nws-fil">
+          <h2>Le fil</h2>
+          <ul>
+            <li><span class="nws-time">08:15</span><p>Ski-alpinisme : un premier sacre olympique historique</p></li>
+            <li><span class="nws-time">10:40</span><p>Cérémonie d'ouverture : San Siro affiche complet</p></li>
+            <li><span class="nws-time">13:05</span><p>Hockey : les stars de la NHL de retour aux Jeux</p></li>
+            <li><span class="nws-time">15:30</span><p>Mascottes : Tina et Milo, stars des boutiques officielles</p></li>
+            <li><span class="nws-time">18:20</span><p>Médailles : l'Italie signe ses meilleurs Jeux d'hiver</p></li>
+            <li><span class="nws-time">21:00</span><p>Clôture : rendez-vous dans les arènes de Vérone</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="section nws-newsletter-wrap">
+        <article class="home-ticket-card cta-card nws-newsletter-card">
+          <div>
+            <span>Newsletter</span>
+            <h3>Ne manquez rien des Jeux</h3>
+            <p>Recevez chaque matin le meilleur de l'actualité de Milano Cortina 2026 directement dans votre boîte mail.</p>
+          </div>
+          <div class="home-ticket-actions">
+            <form class="newsletter">
+              <label for="nws-email">Votre adresse e-mail</label>
+              <div>
+                <input id="nws-email" name="email" type="email" autocomplete="email" required placeholder="votre.email@exemple.com" />
+                <button type="submit">Je m'abonne →</button>
+              </div>
+              <p class="newsletter-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </article>
       </section>
     </main>
 
-    <footer class="footer" id="login">
-      <div class="footer-inner">
-        <img src="assets/home-final/logo-milano-cortina.png" alt="Milano Cortina 2026" />
-        <div class="footer-columns">
-          <div>
-            <h2>Milano Cortina 2026</h2>
-            <p>Le point d'entrée officiel pour suivre les Jeux, les épreuves, les sites et les coulisses.</p>
-          </div>
-          <nav aria-label="Liens de pied de page">
-            <a href="index.html#epreuves">Épreuves</a>
-            <a href="billetterie.html">Billetterie</a>
-            <a href="index.html#sites">Sites</a>
-            <a href="news.html">News</a>
-            <a href="index.html#backstages">Backstages</a>
-          </nav>
-        </div>
-        <form class="newsletter">
-          <label for="email">Recevoir les actualités</label>
-          <div>
-            <input id="email" type="email" placeholder="email@exemple.com" />
-            <button type="submit">S'inscrire</button>
-          </div>
-        </form>
-      </div>
-    </footer>
+    <div id="site-footer"></div>
+    <script src="site-footer.js?v=1"></script>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=13"></script>
     <script src="news.js"></script>
   </body>
 </html>

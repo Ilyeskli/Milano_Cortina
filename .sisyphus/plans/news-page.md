@@ -207,7 +207,7 @@ Créer une page News autonome, fidèle au design Figma, avec grille d'articles e
 
   **Commit**: YES | Message: `assets(news): extract article images from Figma` | Files: `assets/news/*`
 
-- [ ] T4. Création de `news.html` — Structure Complète
+- [x] T4. Création de `news.html` — Structure Complète
 
   **What to do**: Créer la page `news.html` avec header, hero News, filtres par catégorie, grille de cartes d'articles, et footer. Réutiliser la structure de `billetterie.html` comme modèle de page secondaire.
   **Must NOT do**: Ne pas inclure de JavaScript inline (utiliser `script.js` ou créer `news.js`).
@@ -250,7 +250,7 @@ Créer une page News autonome, fidèle au design Figma, avec grille d'articles e
 
   **Commit**: YES | Message: `feat(news): add news.html page with hero, filters and grid` | Files: `news.html`
 
-- [ ] T5. Styles CSS Complémentaires pour Page News
+- [x] T5. Styles CSS Complémentaires pour Page News
 
   **What to do**: Ajouter dans `styles.css` les styles spécifiques à la page News (hero news, grille de cartes enrichie, filtres, responsive). Réutiliser les classes existantes `.section-news`, `.news-card` etc. si applicable.
   **Must NOT do**: Ne pas modifier les styles des autres pages (vérif via diff).
@@ -290,7 +290,7 @@ Créer une page News autonome, fidèle au design Figma, avec grille d'articles e
 
   **Commit**: YES | Message: `style(news): add CSS for news grid, filters and responsive` | Files: `styles.css`
 
-- [ ] T6. Pages Détail d'Article
+- [x] T6. Pages Détail d'Article
 
   **What to do**: Créer au moins 3 pages de détail d'article (`news-article-01.html`, `news-article-02.html`, `news-article-03.html`) avec header, contenu complet (image, titre, catégorie, date, texte), et navigation retour vers `news.html`.
   **Must NOT do**: Ne pas utiliser de paramètres URL ou de JS pour le contenu (site statique).
@@ -330,7 +330,7 @@ Créer une page News autonome, fidèle au design Figma, avec grille d'articles e
 
   **Commit**: YES | Message: `feat(news): add 3 article detail pages` | Files: `news-article-01.html`, `news-article-02.html`, `news-article-03.html`
 
-- [ ] T7. Interactivité — Filtrage Client-Side
+- [x] T7. Interactivité — Filtrage Client-Side
 
   **What to do**: Ajouter dans `news.js` (ou `script.js`) le filtrage des articles par catégorie. Utiliser des data-attributes sur les cartes et écouteurs d'événements sur les boutons de filtre.
   **Must NOT do**: Pas de requête serveur, tout est client-side.
@@ -370,7 +370,7 @@ Créer une page News autonome, fidèle au design Figma, avec grille d'articles e
 
   **Commit**: YES | Message: `feat(news): add client-side category filtering` | Files: `news.js` (ou `script.js`)
 
-- [ ] T8. Mise à Jour Liens Navigation & QA Finale
+- [x] T8. Mise à Jour Liens Navigation & QA Finale
 
   **What to do**: Mettre à jour tous les liens "News" dans le header de `index.html`, `billetterie.html`, et les pages article pour pointer vers `news.html` au lieu des ancres `#news`. Effectuer la QA finale complète.
   **Must NOT do**: Ne pas modifier le contenu des pages existantes, seulement les liens de navigation.

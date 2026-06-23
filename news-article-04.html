@@ -3,58 +3,122 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Le calendrier complet dévoilé — News — Milano Cortina 2026</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Tina et Milo, les hermines stars des Jeux — News — Milano Cortina 2026</title>
+    <link rel="stylesheet" href="styles.css?v=47" />
   </head>
-  <body class="page-news">
-    <header class="mc-header">
-      <a class="mc-logo" href="index.html" aria-label="Milano Cortina 2026"><img src="assets/home-final/logo-milano-cortina.png" alt="" /></a>
-      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
-      <nav class="mc-nav" aria-label="Navigation principale">
-        <a href="athletes.html">Athlètes</a><a href="index.html#epreuves">Épreuves</a>
-        <a href="news.html" class="active" aria-current="page">News</a><a href="billetterie.html">Billetterie</a>
-        <a href="index.html#sites">Médailles</a><a href="index.html#backstages">Backstages</a>
-      </nav>
-      <div class="mc-actions">
-        <button class="flag-button" type="button" aria-label="Langue française"><img src="assets/home-final/france.png" alt="" /></button>
-        <a class="login-link" href="#login">Se connecter</a><a class="signup-link" href="#login">S'inscrire</a>
-      </div>
-    </header>
+  <body class="page-news page-article">
+    <div id="site-header"></div>
+    <script src="site-header.js?v=4"></script>
 
     <main id="top">
-      <section class="ticket-hero article-hero" aria-labelledby="article-title">
-        <div class="article-hero-visual" style="background: url('assets/home-final/news-main.png') center / cover, linear-gradient(135deg, var(--magenta), var(--violet));">
-          <p class="feature-label">Organisation</p>
-        </div>
-        <div class="ticket-hero-copy">
-          <h1 id="article-title">Le calendrier complet des épreuves est dévoilé.</h1>
-          <p class="article-meta">5 juin 2026</p>
+      <section class="art-hero" style="background-image: url('assets/news-img/stoat.jpg')" aria-labelledby="article-title">
+        <nav class="med-breadcrumb" aria-label="Fil d'ariane">
+          <a href="index.html">Accueil</a>
+          <span aria-hidden="true">/</span>
+          <a href="news.html">News</a>
+          <span aria-hidden="true">/</span>
+          <span>Coulisses</span>
+        </nav>
+        <div class="art-hero-foot">
+          <span class="home-news-tag">Coulisses</span>
+          <h1 id="article-title">Tina et Milo, les hermines stars des Jeux</h1>
+          <p class="art-hero-meta">12 février 2026 · 2 min de lecture</p>
         </div>
       </section>
-      <section class="section article-content" aria-label="Contenu de l'article">
-        <a class="btn-cta article-back" href="news.html">← Toutes les actualités</a>
-        <p>Consultez les dates, horaires et sites de toutes les disciplines des Jeux d'hiver 2026.</p>
-        <p>Le calendrier officiel révèle 109 épreuves réparties sur 15 disciplines dans 7 sites de compétition différents. Les compétitions débuteront le 6 février 2026 avec le ski alpin à Cortina.</p>
-        <p>Les temps forts incluent la finale du hockey sur glace le 22 février à Milan et la cérémonie de clôture le même jour au Stade San Siro.</p>
-        <p>Suivez toute l'actualité de l'organisation sur Milano Cortina 2026.</p>
+
+      <article class="art-body">
+        <p class="art-lead">
+          Deux hermines espiègles, Tina et Milo, sont devenues les visages les plus photographiés de
+          Milano Cortina 2026. Retour sur le phénomène des mascottes officielles, adoptées bien au-delà
+          des frontières italiennes.
+        </p>
+
+        <p>
+          Pelage immaculé, regard malicieux : les deux hermines ont conquis le public dès leur première
+          apparition. Présentes sur tous les sites, elles sont vite devenues incontournables dans les
+          tribunes comme sur les réseaux sociaux.
+        </p>
+
+        <h2>Des mascottes nées d'un concours</h2>
+        <p>
+          Tina et Milo sont le fruit d'un grand concours national auquel ont participé des milliers
+          d'écoliers italiens. Un choix symbolique : confier l'image des Jeux aux enfants, premiers
+          ambassadeurs de l'olympisme.
+        </p>
+
+        <h2>Un symbole des Alpes</h2>
+        <p>
+          L'hermine, dont le pelage blanchit l'hiver, incarne à merveille l'esprit des montagnes
+          enneigées. Agile et résistante, elle est devenue le porte-bonheur d'une édition qui se voulait
+          proche de la nature.
+        </p>
+
+        <blockquote>
+          « Les enfants repartent avec une peluche, mais surtout avec des souvenirs plein la tête. »
+        </blockquote>
+
+        <p>
+          Des boutiques officielles aux écrans géants, Tina et Milo auront marqué ces Jeux de leur grain
+          de folie. Et prolongé, à leur manière, la fête bien après la dernière médaille.
+        </p>
+
+        <a class="art-back" href="news.html">← Toutes les actualités</a>
+      </article>
+
+      <section class="section art-related" aria-label="À lire aussi">
+        <div class="section-head">
+          <p class="kicker">À lire aussi</p>
+          <h2>Dans la même rubrique</h2>
+        </div>
+        <div class="nws-grid">
+          <a class="nws-card" href="news-article-02.html" style="background-image: url('assets/sites/milano.jpg')">
+            <span class="nws-badge">Cérémonies</span>
+            <div class="nws-card-body">
+              <h3>San Siro embrase l'ouverture des Jeux</h3>
+              <span class="nws-date">6 février 2026</span>
+            </div>
+          </a>
+          <a class="nws-card" href="news-article-03.html" style="background-image: url('assets/sites/valtellina.jpg')">
+            <span class="nws-badge">Compétitions</span>
+            <div class="nws-card-body">
+              <h3>Le ski-alpinisme entre dans l'histoire olympique</h3>
+              <span class="nws-date">21 février 2026</span>
+            </div>
+          </a>
+          <a class="nws-card" href="news-article-06.html" style="background-image: url('assets/sites/verona.jpg')">
+            <span class="nws-badge">Cérémonies</span>
+            <div class="nws-card-body">
+              <h3>Vérone clôt les Jeux dans ses arènes antiques</h3>
+              <span class="nws-date">22 février 2026</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section nws-newsletter-wrap">
+        <article class="home-ticket-card cta-card nws-newsletter-card">
+          <div>
+            <span>Newsletter</span>
+            <h3>Ne manquez rien des Jeux</h3>
+            <p>Recevez chaque matin le meilleur de l'actualité de Milano Cortina 2026 directement dans votre boîte mail.</p>
+          </div>
+          <div class="home-ticket-actions">
+            <form class="newsletter">
+              <label for="art-email">Votre adresse e-mail</label>
+              <div>
+                <input id="art-email" name="email" type="email" autocomplete="email" required placeholder="votre.email@exemple.com" />
+                <button type="submit">Je m'abonne →</button>
+              </div>
+              <p class="newsletter-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </article>
       </section>
     </main>
 
-    <footer class="footer" id="login">
-      <div class="footer-inner">
-        <img src="assets/home-final/logo-milano-cortina.png" alt="Milano Cortina 2026" />
-        <div class="footer-columns">
-          <div>
-            <h2>Milano Cortina 2026</h2>
-            <p>Le point d'entrée officiel pour suivre les Jeux, les épreuves, les sites et les coulisses.</p>
-          </div>
-          <nav aria-label="Liens de pied de page">
-            <a href="index.html#epreuves">Épreuves</a><a href="billetterie.html">Billetterie</a><a href="index.html#sites">Sites</a><a href="news.html">News</a><a href="index.html#backstages">Backstages</a>
-          </nav>
-        </div>
-        <form class="newsletter"><label for="email">Recevoir les actualités</label><div><input id="email" type="email" placeholder="email@exemple.com" /><button type="submit">S'inscrire</button></div></form>
-      </div>
-    </footer>
-    <script src="script.js"></script>
+    <div id="site-footer"></div>
+    <script src="site-footer.js?v=1"></script>
+
+    <script src="script.js?v=13"></script>
   </body>
 </html>
