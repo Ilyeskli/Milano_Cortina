@@ -4,28 +4,42 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Olympic Backstages — À venir — Milano Cortina 2026</title>
-    <link rel="stylesheet" href="styles.css?v=69" />
+    <link rel="stylesheet" href="styles.css?v=70" />
   </head>
   <body class="page-backstages">
     <div id="bks-shell"></div>
     <script src="backstages-shell.js?v=4"></script>
 
     <main id="top">
-      <header class="bks-pagehead">
-        <span class="bks-kicker">Programme</span>
-        <h1>À venir</h1>
-        <p>Les prochains directs et les rendez-vous à ne pas manquer sur Olympic Backstages.</p>
-      </header>
-      <section class="bks-grid" aria-label="À venir">
-        <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/cortina.jpg')"><span class="bks-card-badge">Bientôt</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Slalom géant dames</p><p class="bks-card-meta"><span>Ski alpin</span><span>Aujourd'hui · 10:00</span></p></div></a>
-        <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/news-img/biathlon.jpg')"><span class="bks-card-badge">Bientôt</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Poursuite messieurs</p><p class="bks-card-meta"><span>Biathlon</span><span>Aujourd'hui · 14:30</span></p></div></a>
-        <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/milano.jpg')"><span class="bks-card-badge">Bientôt</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Quart de finale hockey</p><p class="bks-card-meta"><span>Hockey</span><span>Aujourd'hui · 20:00</span></p></div></a>
-        <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sports/snowboard.jpg')"><span class="bks-card-badge">Demain</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Big air messieurs</p><p class="bks-card-meta"><span>Snowboard</span><span>Demain · 11:15</span></p></div></a>
-        <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sports/ski-fond.jpg')"><span class="bks-card-badge">Demain</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Relais 4×7,5 km</p><p class="bks-card-meta"><span>Ski de fond</span><span>Demain · 13:00</span></p></div></a>
-        <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sports/patinage-artistique.jpg')"><span class="bks-card-badge">Demain</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Danse sur glace — libre</p><p class="bks-card-meta"><span>Patinage</span><span>Demain · 19:30</span></p></div></a>
-        <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/valtellina.jpg')"><span class="bks-card-badge">Cette semaine</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Sprint ski-alpinisme</p><p class="bks-card-meta"><span>Ski-alpinisme</span><span>Jeu. · 09:45</span></p></div></a>
-        <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/verona.jpg')"><span class="bks-card-badge">Cette semaine</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Cérémonie de clôture</p><p class="bks-card-meta"><span>Vérone</span><span>Dim. · 20:00</span></p></div></a>
+      <!-- Hero -->
+      <section class="bks-dhero" style="background-image: url('assets/sites/valdifiemme.jpg')" aria-labelledby="av-title">
+        <span class="bks-dbadge">Programme</span>
+        <h1 id="av-title">À venir</h1>
+        <p>Les prochains directs et les rendez-vous à ne pas manquer sur Olympic Backstages : préparez votre planning des Jeux.</p>
       </section>
+
+      <!-- Stats -->
+      <section class="bks-dstats" aria-label="Chiffres clés">
+        <div><p class="bks-dstat-num">24</p><p class="bks-dstat-label">directs aujourd'hui</p></div>
+        <div><p class="bks-dstat-num">80+</p><p class="bks-dstat-label">séances cette semaine</p></div>
+        <div><p class="bks-dstat-num">16</p><p class="bks-dstat-label">disciplines</p></div>
+        <div><p class="bks-dstat-num">5</p><p class="bks-dstat-label">pôles olympiques</p></div>
+      </section>
+      <!-- Calendrier : sélecteur de jours -->
+      <div class="bks-days" role="tablist" aria-label="Choisir un jour">
+        <button class="bks-day" type="button" data-day="6"><span class="bks-day-dow">Ven</span><span class="bks-day-date">6 févr.</span></button>
+        <button class="bks-day" type="button" data-day="7"><span class="bks-day-dow">Sam</span><span class="bks-day-date">7 févr.</span></button>
+        <button class="bks-day is-active" type="button" data-day="8"><span class="bks-day-dow">Dim</span><span class="bks-day-date">8 févr.</span></button>
+        <button class="bks-day" type="button" data-day="9"><span class="bks-day-dow">Lun</span><span class="bks-day-date">9 févr.</span></button>
+        <button class="bks-day" type="button" data-day="10"><span class="bks-day-dow">Mar</span><span class="bks-day-date">10 févr.</span></button>
+        <button class="bks-day" type="button" data-day="11"><span class="bks-day-dow">Mer</span><span class="bks-day-date">11 févr.</span></button>
+        <button class="bks-day" type="button" data-day="12"><span class="bks-day-dow">Jeu</span><span class="bks-day-date">12 févr.</span></button>
+        <button class="bks-day" type="button" data-day="13"><span class="bks-day-dow">Ven</span><span class="bks-day-date">13 févr.</span></button>
+        <button class="bks-day" type="button" data-day="14"><span class="bks-day-dow">Sam</span><span class="bks-day-date">14 févr.</span></button>
+      </div>
+
+      <!-- Grille horaire du jour (remplie par backstages-a-venir.js) -->
+      <section class="bks-sched" id="bks-sched" aria-label="Programme du jour"></section>
 
       <section class="bks-rail-sec" aria-labelledby="now-title">
         <div class="bks-rail-head">
@@ -60,5 +74,6 @@
 
     <div id="site-footer"></div>
     <script src="site-footer.js?v=2"></script>
+    <script src="backstages-a-venir.js?v=2"></script>
   </body>
 </html>
