@@ -5,8 +5,9 @@
   const path = location.pathname.split("/").pop() || "backstages.html";
 
   // Top navigation — every entry is a Backstages page (not the classic site).
+  // « Accueil » (la home Backstages) est en premier, à gauche.
   const NAV = [
-    { href: "backstages.html", key: "live", label: "En direct" },
+    { href: "backstages.html", key: "live", label: "Accueil" },
     { href: "backstages-disciplines.html", key: "disc", label: "Disciplines" },
     { href: "backstages-replays.html", key: "replays", label: "Replays" },
     { href: "backstages-coulisses.html", key: "coulisses", label: "En coulisses" },
@@ -35,7 +36,7 @@
 
   const topbar = `
     <header class="bks-topbar">
-      <a class="bks-logo" href="backstages.html" aria-label="Olympic Backstages — Accueil">
+      <a class="bks-logo" href="index.html" aria-label="Milano Cortina 2026 — Retour au site">
         <img src="assets/home-final/logo-milano-cortina.svg" alt="Milano Cortina 2026" />
       </a>
       <nav class="bks-topnav" aria-label="Navigation Backstages">
@@ -49,16 +50,16 @@
       </div>
     </header>`;
 
-  // Bottom tab bar (mobile) — 5 destinations, Netflix-style.
+  // Bottom tab bar (mobile) — 5 destinations, Netflix-style, Accueil à gauche.
   const tabIco = {
-    live: `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>`,
+    live: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>`,
     disc: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>`,
     replays: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor" stroke="none"/></svg>`,
     coulisses: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8 8 0 0 1-11.5 7.2L4 20.5l1.4-5A8 8 0 1 1 21 11.5z"/></svg>`,
     compte: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg>`,
   };
   const TABS = [
-    { href: "backstages.html", key: "live", label: "En direct" },
+    { href: "backstages.html", key: "live", label: "Accueil" },
     { href: "backstages-disciplines.html", key: "disc", label: "Disciplines" },
     { href: "backstages-replays.html", key: "replays", label: "Replays" },
     { href: "backstages-coulisses.html", key: "coulisses", label: "En coulisses" },
