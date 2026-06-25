@@ -4,20 +4,28 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Olympic Backstages — Mon compte — Milano Cortina 2026</title>
-    <link rel="stylesheet" href="styles.css?v=70" />
+    <link rel="stylesheet" href="styles.css?v=72" />
   </head>
   <body class="page-backstages">
     <div id="bks-shell"></div>
     <script src="backstages-shell.js?v=4"></script>
 
     <main id="top">
-      <header class="bks-profile">
-        <span class="bks-profile-avatar" aria-hidden="true"></span>
-        <div class="bks-profile-info">
-          <h1>Lucas Bernard</h1>
-          <p>lucas.bernard@exemple.com · Membre depuis février 2026</p>
+      <header class="bks-acct">
+        <div class="bks-account-cover" aria-hidden="true"></div>
+        <div class="bks-profile">
+          <span class="bks-profile-avatar" aria-hidden="true">LB</span>
+          <div class="bks-profile-info">
+            <h1>Lucas Bernard</h1>
+            <p>lucas.bernard@exemple.com · Membre depuis février 2026</p>
+            <div class="bks-profile-stats">
+              <span><b>47</b> vidéos vues</span>
+              <span><b>12</b> dans Ma liste</span>
+              <span><b>3</b> appareils</span>
+            </div>
+          </div>
+          <button class="bks-profile-edit" type="button" id="open-settings">Modifier le profil</button>
         </div>
-        <a class="bks-profile-edit" href="profil.html">Modifier le profil</a>
       </header>
 
       <!-- Reprendre le visionnage -->
@@ -48,21 +56,47 @@
         </div>
       </section>
 
-      <!-- Préférences -->
-      <section class="bks-prefs" aria-label="Préférences">
-        <h2>Préférences</h2>
-        <div class="bks-pref"><span>Langue</span><span class="bks-pref-val">Français →</span></div>
-        <div class="bks-pref"><span>Qualité de lecture</span><span class="bks-pref-val">Automatique (HD) →</span></div>
-        <div class="bks-pref"><span>Notifications</span><span class="bks-pref-val">Activées →</span></div>
-        <div class="bks-pref"><span>Téléchargements</span><span class="bks-pref-val">Wi-Fi uniquement →</span></div>
-        <h2>Compte</h2>
-        <div class="bks-pref"><span>Abonnement</span><span class="bks-pref-val">Olympic Backstages · Gratuit</span></div>
-        <div class="bks-pref"><span>Appareils connectés</span><span class="bks-pref-val">3 appareils →</span></div>
-        <a class="bks-pref bks-pref-danger" href="index.html"><span>Se déconnecter</span><span aria-hidden="true">→</span></a>
-      </section>
     </main>
+
+    <!-- Modal Paramètres du compte (ouvert par « Modifier le profil ») -->
+    <div class="bks-modal" id="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title" hidden>
+      <div class="bks-modal-backdrop" data-close></div>
+      <div class="bks-modal-dialog">
+        <div class="bks-modal-head">
+          <h2 id="settings-title">Paramètres du compte</h2>
+          <button class="bks-modal-close" type="button" data-close aria-label="Fermer">×</button>
+        </div>
+        <div class="bks-modal-body">
+          <h3>Profil</h3>
+          <div class="bks-modal-ava-row">
+            <span class="bks-modal-ava" aria-hidden="true">LB</span>
+            <button class="bks-modal-photo" type="button">Changer la photo</button>
+          </div>
+          <label class="bks-field"><span>Nom</span><input type="text" value="Lucas Bernard" /></label>
+          <label class="bks-field"><span>E-mail</span><input type="email" value="lucas.bernard@exemple.com" /></label>
+
+          <h3>Préférences</h3>
+          <label class="bks-field"><span>Langue</span><select><option>Français</option><option>English</option><option>Italiano</option><option>Deutsch</option></select></label>
+          <label class="bks-field"><span>Qualité de lecture</span><select><option>Automatique (HD)</option><option>Haute (1080p)</option><option>Basse (économie de données)</option></select></label>
+          <label class="bks-field"><span>Notifications</span><select><option>Activées</option><option>Résumé quotidien</option><option>Désactivées</option></select></label>
+          <label class="bks-field"><span>Téléchargements</span><select><option>Wi-Fi uniquement</option><option>Wi-Fi + données mobiles</option></select></label>
+
+          <h3>Compte</h3>
+          <div class="bks-pref"><span>Abonnement</span><span class="bks-pref-val">Olympic Backstages · Gratuit</span></div>
+          <div class="bks-pref"><span>Appareils connectés</span><span class="bks-pref-val">3 appareils</span></div>
+        </div>
+        <div class="bks-modal-foot">
+          <a class="bks-modal-logout" href="index.html">Se déconnecter</a>
+          <div class="bks-modal-actions">
+            <button class="bks-modal-btn" type="button" data-close>Annuler</button>
+            <button class="bks-modal-btn bks-modal-btn-primary" type="button" id="save-settings">Enregistrer</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div id="site-footer"></div>
     <script src="site-footer.js?v=2"></script>
+    <script src="backstages-compte.js?v=1"></script>
   </body>
 </html>
