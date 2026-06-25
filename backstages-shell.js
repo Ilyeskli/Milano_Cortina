@@ -34,6 +34,59 @@
   const icoBell = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.5 21a1.5 1.5 0 0 1-3 0"/></svg>`;
   const icoChev = `<svg class="bks-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>`;
 
+  // --- Contenu des menus déroulants ---
+  // Index de recherche (pages, disciplines, athlètes) filtré en direct.
+  const SEARCH_INDEX = [
+    { label: "Slalom géant messieurs", sub: "En direct · Ski alpin", href: "backstages-video.html" },
+    { label: "Ski alpin", sub: "Discipline", href: "backstages-discipline.html?disc=ski-alpin" },
+    { label: "Biathlon", sub: "Discipline", href: "backstages-discipline.html?disc=biathlon" },
+    { label: "Patinage artistique", sub: "Discipline", href: "backstages-discipline.html?disc=patinage-artistique" },
+    { label: "Snowboard", sub: "Discipline", href: "backstages-discipline.html?disc=snowboard" },
+    { label: "Ski de fond", sub: "Discipline", href: "backstages-discipline.html?disc=ski-de-fond" },
+    { label: "Hockey sur glace", sub: "Discipline", href: "backstages-discipline.html?disc=hockey" },
+    { label: "Replays", sub: "Toutes les épreuves à revoir", href: "backstages-replays.html" },
+    { label: "En coulisses", sub: "Immersions & reportages", href: "backstages-coulisses.html" },
+    { label: "Temps forts", sub: "Les meilleurs moments", href: "backstages-temps-forts.html" },
+    { label: "À venir", sub: "Le programme des Jeux", href: "backstages-a-venir.html" },
+    { label: "Mikaela Shiffrin", sub: "Athlète · Ski alpin 🇺🇸", href: "profil.html?athlete=shiffrin" },
+    { label: "Marco Odermatt", sub: "Athlète · Ski alpin 🇨🇭", href: "profil.html?athlete=odermatt" },
+    { label: "Lou Jeanmonnot", sub: "Athlète · Biathlon 🇫🇷", href: "profil.html?athlete=jeanmonnot" },
+  ];
+
+  const NOTIFS = [
+    { live: true, text: "Le slalom géant débute dans 10 min", time: "Maintenant", href: "backstages-video.html" },
+    { text: "Nouveau replay : Half-pipe, la finale", time: "Il y a 12 min", href: "backstages-replays.html" },
+    { text: "Mikaela Shiffrin décroche l'or 🥇", time: "Il y a 25 min", href: "backstages-temps-forts.html" },
+    { text: "3 nouvelles immersions en coulisses", time: "Il y a 1 h", href: "backstages-coulisses.html" },
+  ];
+  const FRIENDS = [
+    { ini: "MR", name: "Marco Rossi", act: "regarde Descente messieurs" },
+    { ini: "SB", name: "Sofia Bianchi", act: "regarde En coulisses" },
+    { ini: "LK", name: "Liam Keller", act: "en ligne" },
+  ];
+
+  const searchPanel = `
+        <div class="bks-search-box">${icoSearch}<input type="search" class="bks-search-input" placeholder="Rechercher une épreuve, un athlète…" aria-label="Rechercher" /></div>
+        <div class="bks-search-results"></div>`;
+  const notifsPanel =
+    `<div class="bks-panel-head"><h3>Notifications</h3><button class="bks-panel-link" type="button">Tout marquer comme lu</button></div>` +
+    NOTIFS.map((n) =>
+      `<a class="bks-notif" href="${n.href}"><span class="bks-notif-dot${n.live ? " is-live" : ""}" aria-hidden="true"></span><span><p>${n.text}</p><span>${n.time}</span></span></a>`
+    ).join("");
+  const groupePanel =
+    `<div class="bks-panel-head"><h3>Communauté</h3></div>` +
+    FRIENDS.map((f) =>
+      `<a class="bks-friend" href="#"><span class="bks-friend-ava" aria-hidden="true">${f.ini}</span><span><b>${f.name}</b><span>${f.act}</span></span></a>`
+    ).join("") +
+    `<button class="bks-panel-cta" type="button">＋ Regarder ensemble</button>`;
+  const accountPanel =
+    `<div class="bks-menu-id"><span class="bks-avatar" aria-hidden="true"></span><span><b>Lucas Bernard</b><span>Olympic Backstages</span></span></div>` +
+    `<a href="backstages-compte.html">Mon compte</a>` +
+    `<a href="backstages-compte.html">Ma liste</a>` +
+    `<a href="backstages-compte.html">Paramètres</a>` +
+    `<a href="index.html">Quitter Backstages</a>` +
+    `<a class="bks-menu-danger" href="index.html">Se déconnecter</a>`;
+
   const topbar = `
     <header class="bks-topbar">
       <a class="bks-logo" href="index.html" aria-label="Milano Cortina 2026 — Retour au site">
@@ -43,10 +96,22 @@
         ${navLinks}
       </nav>
       <div class="bks-topactions">
-        <button class="bks-icon" type="button" aria-label="Rechercher">${icoSearch}</button>
-        <button class="bks-icon bks-hide-mobile" type="button" aria-label="Communauté">${icoUsers}</button>
-        <button class="bks-icon bks-hide-mobile" type="button" aria-label="Notifications">${icoBell}</button>
-        <a class="bks-account" href="backstages-compte.html" aria-label="Mon compte"><span class="bks-avatar" aria-hidden="true"></span>${icoChev}</a>
+        <div class="bks-menu">
+          <button class="bks-icon" type="button" aria-label="Rechercher" aria-expanded="false">${icoSearch}</button>
+          <div class="bks-panel bks-panel-search">${searchPanel}</div>
+        </div>
+        <div class="bks-menu bks-hide-mobile">
+          <button class="bks-icon" type="button" aria-label="Communauté" aria-expanded="false">${icoUsers}</button>
+          <div class="bks-panel">${groupePanel}</div>
+        </div>
+        <div class="bks-menu bks-hide-mobile">
+          <button class="bks-icon bks-icon-badge" type="button" aria-label="Notifications" aria-expanded="false">${icoBell}<span class="bks-badge">${NOTIFS.length}</span></button>
+          <div class="bks-panel">${notifsPanel}</div>
+        </div>
+        <div class="bks-menu">
+          <button class="bks-account" type="button" aria-label="Mon compte" aria-expanded="false"><span class="bks-avatar" aria-hidden="true"></span>${icoChev}</button>
+          <div class="bks-panel bks-panel-menu">${accountPanel}</div>
+        </div>
       </div>
     </header>`;
 
@@ -73,4 +138,61 @@
   const mount = document.getElementById("bks-shell");
   if (mount) mount.outerHTML = topbar;
   document.body.insertAdjacentHTML("beforeend", tabbar);
+
+  // --- Menus déroulants de la topbar (recherche, communauté, notifs, profil) ---
+  var menus = Array.prototype.slice.call(document.querySelectorAll(".bks-topactions .bks-menu"));
+  function closeMenus(except) {
+    menus.forEach(function (m) {
+      if (m === except) return;
+      m.classList.remove("is-open");
+      var b = m.querySelector("button");
+      if (b) b.setAttribute("aria-expanded", "false");
+    });
+  }
+  menus.forEach(function (m) {
+    var btn = m.querySelector("button");
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var willOpen = !m.classList.contains("is-open");
+      closeMenus(m);
+      m.classList.toggle("is-open", willOpen);
+      btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      if (willOpen) {
+        var inp = m.querySelector(".bks-search-input");
+        if (inp) inp.focus();
+      }
+    });
+  });
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".bks-menu")) closeMenus(null);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeMenus(null);
+  });
+
+  // --- Recherche en direct ---
+  var input = document.querySelector(".bks-search-input");
+  var results = document.querySelector(".bks-search-results");
+  if (input && results) {
+    function norm(s) {
+      return (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+    }
+    function renderResults(q) {
+      var nq = norm(q.trim());
+      var items = nq
+        ? SEARCH_INDEX.filter(function (it) { return norm(it.label).indexOf(nq) > -1 || norm(it.sub).indexOf(nq) > -1; })
+        : SEARCH_INDEX.slice(0, 6);
+      if (!items.length) {
+        results.innerHTML = '<p class="bks-search-empty">Aucun résultat pour « ' + q.trim() + " ».</p>";
+        return;
+      }
+      results.innerHTML =
+        (nq ? "" : '<p class="bks-search-label">Suggestions</p>') +
+        items.map(function (it) {
+          return '<a class="bks-search-item" href="' + it.href + '"><span>' + it.label + '</span><span class="bks-search-sub">' + it.sub + "</span></a>";
+        }).join("");
+    }
+    input.addEventListener("input", function () { renderResults(input.value); });
+    renderResults("");
+  }
 })();
