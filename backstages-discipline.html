@@ -4,22 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Olympic Backstages — Ski alpin — Milano Cortina 2026</title>
-    <link rel="stylesheet" href="styles.css?v=68" />
+    <link rel="stylesheet" href="styles.css?v=69" />
   </head>
   <body class="page-backstages">
     <div id="bks-shell"></div>
     <script src="backstages-shell.js?v=4"></script>
 
     <main id="top">
-      <!-- Hero discipline -->
-      <section class="bks-dhero" style="background-image: url('assets/figma-raw/sport-06.png')" aria-labelledby="d-title">
-        <span class="bks-dbadge">Discipline</span>
+      <!-- Hero discipline (rempli par backstages-discipline.js selon ?disc=) -->
+      <section class="bks-dhero" id="d-hero" style="background-image: url('assets/figma-raw/sport-06.png')" aria-labelledby="d-title">
+        <span class="bks-dbadge" id="d-badge">Discipline</span>
         <h1 id="d-title">Ski alpin</h1>
-        <p>Descente, slalom, géant, super-G, combiné par équipes : la discipline reine des Jeux, en direct de Bormio et Cortina d'Ampezzo.</p>
+        <p id="d-desc">Descente, slalom, géant, super-G, combiné par équipes : la discipline reine des Jeux, en direct de Bormio et Cortina d'Ampezzo.</p>
       </section>
 
       <!-- Stats -->
-      <section class="bks-dstats" aria-label="Chiffres clés">
+      <section class="bks-dstats" id="d-stats" aria-label="Chiffres clés">
         <div><p class="bks-dstat-num">5</p><p class="bks-dstat-label">épreuves olympiques</p></div>
         <div><p class="bks-dstat-num">2</p><p class="bks-dstat-label">sites (Bormio · Cortina)</p></div>
         <div><p class="bks-dstat-num">16</p><p class="bks-dstat-label">séances en direct</p></div>
@@ -32,11 +32,11 @@
           <h2 id="ep-title">Épreuves · en direct &amp; à venir</h2>
           <a class="bks-seeall" href="backstages-a-venir.html">Voir tout →</a>
         </div>
-        <div class="bks-rail">
-          <a class="bks-card" href="backstages-replays.html" style="background-image: url('assets/sites/valtellina.jpg')"><span class="bks-card-badge">En direct</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Descente messieurs</p><p class="bks-card-meta"><span>Bormio</span><span>En cours</span></p></div></a>
-          <a class="bks-card" href="backstages-a-venir.html" style="background-image: url('assets/sites/cortina.jpg')"><span class="bks-card-badge">À venir</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Slalom géant dames</p><p class="bks-card-meta"><span>Cortina</span><span>Aujourd'hui · 14:00</span></p></div></a>
-          <a class="bks-card" href="backstages-a-venir.html" style="background-image: url('assets/figma-raw/sport-06.png')"><span class="bks-card-badge">À venir</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Slalom messieurs</p><p class="bks-card-meta"><span>Bormio</span><span>Demain · 10:30</span></p></div></a>
-          <a class="bks-card" href="backstages-replays.html" style="background-image: url('assets/news-img/trecime.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Super-G dames</p><p class="bks-card-meta"><span>Cortina</span><span>Replay dispo</span></p></div></a>
+        <div class="bks-rail" id="d-epreuves">
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/valtellina.jpg')"><span class="bks-card-badge">En direct</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Descente messieurs</p><p class="bks-card-meta"><span>Bormio</span><span>En cours</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/cortina.jpg')"><span class="bks-card-badge">À venir</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Slalom géant dames</p><p class="bks-card-meta"><span>Cortina</span><span>Aujourd'hui · 14:00</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/figma-raw/sport-06.png')"><span class="bks-card-badge">À venir</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Slalom messieurs</p><p class="bks-card-meta"><span>Bormio</span><span>Demain · 10:30</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/news-img/trecime.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Super-G dames</p><p class="bks-card-meta"><span>Cortina</span><span>Replay dispo</span></p></div></a>
         </div>
       </section>
 
@@ -46,7 +46,7 @@
           <h2 id="stars-title">Les stars du ski alpin</h2>
           <a class="bks-seeall" href="tous-les-athletes.html">Voir tout →</a>
         </div>
-        <div class="bks-rail">
+        <div class="bks-rail" id="d-stars">
           <a class="bks-poster" href="profil.html?athlete=shiffrin"><span class="bks-poster-img" style="background-image: url('assets/athletes/shiffrin.jpg')"><span class="bks-poster-like" aria-hidden="true">♥</span></span><p class="bks-poster-name">Mikaela Shiffrin</p><p class="bks-poster-sub">Ski alpin · 🇺🇸</p></a>
           <a class="bks-poster" href="profil.html?athlete=odermatt"><span class="bks-poster-img" style="background-image: url('assets/athletes/odermatt.jpg')"><span class="bks-poster-like" aria-hidden="true">♥</span></span><p class="bks-poster-name">Marco Odermatt</p><p class="bks-poster-sub">Ski alpin · 🇨🇭</p></a>
           <a class="bks-poster" href="profil.html"><span class="bks-poster-img" style="background-image: url('assets/athletes/brignone.jpg')"><span class="bks-poster-like" aria-hidden="true">♥</span></span><p class="bks-poster-name">Federica Brignone</p><p class="bks-poster-sub">Ski alpin · 🇮🇹</p></a>
@@ -60,11 +60,11 @@
           <h2 id="rr-title">Replays récents</h2>
           <a class="bks-seeall" href="backstages-replays.html">Voir tout →</a>
         </div>
-        <div class="bks-rail">
-          <a class="bks-card" href="backstages-replays.html" style="background-image: url('assets/sites/valtellina.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Descente messieurs</p><p class="bks-card-meta"><span>Bormio</span><span>1:42:00</span></p></div></a>
-          <a class="bks-card" href="backstages-replays.html" style="background-image: url('assets/sites/cortina.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Slalom géant dames</p><p class="bks-card-meta"><span>Cortina</span><span>1:06:40</span></p></div></a>
-          <a class="bks-card" href="backstages-replays.html" style="background-image: url('assets/figma-raw/sport-06.png')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Super-G messieurs</p><p class="bks-card-meta"><span>Bormio</span><span>1:08:25</span></p></div></a>
-          <a class="bks-card" href="backstages-replays.html" style="background-image: url('assets/news-img/trecime.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Combiné par équipes</p><p class="bks-card-meta"><span>Cortina</span><span>1:21:10</span></p></div></a>
+        <div class="bks-rail" id="d-replays">
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/valtellina.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Descente messieurs</p><p class="bks-card-meta"><span>Bormio</span><span>1:42:00</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/cortina.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Slalom géant dames</p><p class="bks-card-meta"><span>Cortina</span><span>1:06:40</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/figma-raw/sport-06.png')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Super-G messieurs</p><p class="bks-card-meta"><span>Bormio</span><span>1:08:25</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/news-img/trecime.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Combiné par équipes</p><p class="bks-card-meta"><span>Cortina</span><span>1:21:10</span></p></div></a>
         </div>
       </section>
 
@@ -74,16 +74,17 @@
           <h2 id="gm-title">Les grands moments du ski alpin</h2>
           <a class="bks-seeall" href="backstages-temps-forts.html">Voir tout →</a>
         </div>
-        <div class="bks-rail">
-          <a class="bks-card" href="backstages-temps-forts.html" style="background-image: url('assets/sites/cortina.jpg')"><span class="bks-card-badge">Or</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">L'or de Brignone à domicile</p><p class="bks-card-meta"><span>02:48</span></p></div></a>
-          <a class="bks-card" href="backstages-temps-forts.html" style="background-image: url('assets/sites/valtellina.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">La descente de tous les records</p><p class="bks-card-meta"><span>03:05</span></p></div></a>
-          <a class="bks-card" href="backstages-temps-forts.html" style="background-image: url('assets/figma-raw/sport-06.png')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Le doublé suisse en géant</p><p class="bks-card-meta"><span>02:22</span></p></div></a>
-          <a class="bks-card" href="backstages-temps-forts.html" style="background-image: url('assets/news-img/trecime.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Le slalom au sommet</p><p class="bks-card-meta"><span>01:58</span></p></div></a>
+        <div class="bks-rail" id="d-moments">
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/cortina.jpg')"><span class="bks-card-badge">Or</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">L'or de Brignone à domicile</p><p class="bks-card-meta"><span>02:48</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/valtellina.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">La descente de tous les records</p><p class="bks-card-meta"><span>03:05</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/figma-raw/sport-06.png')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Le doublé suisse en géant</p><p class="bks-card-meta"><span>02:22</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/news-img/trecime.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Le slalom au sommet</p><p class="bks-card-meta"><span>01:58</span></p></div></a>
         </div>
       </section>
     </main>
 
     <div id="site-footer"></div>
     <script src="site-footer.js?v=2"></script>
+    <script src="backstages-discipline.js?v=1"></script>
   </body>
 </html>

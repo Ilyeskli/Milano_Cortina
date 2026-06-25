@@ -2145,32 +2145,33 @@ body.page-backstages { background: #0a0b15; color: #fff; overflow-x: hidden; }
 /* Discipline card */
 .bks-disc {
   position: relative;
-  flex: 0 0 340px;
-  height: 188px;
+  flex: 0 0 300px;
+  height: 196px;
   border-radius: 14px;
   overflow: hidden;
   scroll-snap-align: start;
   display: flex;
   align-items: flex-end;
-  padding: 20px;
+  padding: 16px;
   color: #fff;
   text-decoration: none;
   background: #14182b center / cover no-repeat;
+  transition: transform 160ms ease;
 }
+.bks-disc:hover { transform: translateY(-3px); }
 .bks-disc::before {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(120deg, rgba(247, 1, 255, 0.34), rgba(10, 11, 21, 0.35) 58%, rgba(10, 11, 21, 0.85));
+  /* Dégradé propre, identique aux cartes de contenu (plus de lavage magenta) */
+  background: linear-gradient(180deg, rgba(10, 11, 21, 0.05) 35%, rgba(10, 11, 21, 0.9));
 }
 .bks-disc span {
   position: relative;
   z-index: 1;
-  font-family: "Mabry Pro", "Arial Black", Inter, sans-serif;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 900;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
 }
 
 /* Sub-page header + full grid (Disciplines / Replays / En coulisses / …) */
