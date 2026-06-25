@@ -11,11 +11,20 @@
     <script src="backstages-shell.js?v=4"></script>
 
     <main id="top">
-      <header class="bks-pagehead">
-        <span class="bks-kicker">Parcourir</span>
-        <h1>Disciplines</h1>
-        <p>Explorez les coulisses sport par sport : replays, immersions et portraits, par discipline.</p>
-      </header>
+      <!-- Hero -->
+      <section class="bks-dhero" style="background-image: url('assets/sites/valtellina.jpg')" aria-labelledby="disc-title">
+        <span class="bks-dbadge">Parcourir</span>
+        <h1 id="disc-title">Disciplines</h1>
+        <p>Explorez les Jeux sport par sport : replays, immersions et portraits, des sommets de la Valteline à la glace de Milan.</p>
+      </section>
+
+      <!-- Stats -->
+      <section class="bks-dstats" aria-label="Chiffres clés">
+        <div><p class="bks-dstat-num">16</p><p class="bks-dstat-label">disciplines</p></div>
+        <div><p class="bks-dstat-num">116</p><p class="bks-dstat-label">épreuves olympiques</p></div>
+        <div><p class="bks-dstat-num">5</p><p class="bks-dstat-label">pôles olympiques</p></div>
+        <div><p class="bks-dstat-num">13</p><p class="bks-dstat-label">sites de compétition</p></div>
+      </section>
       <section class="bks-grid" aria-label="Disciplines">
         <a class="bks-disc" href="backstages-discipline.html?disc=ski-alpin" style="background-image: url('assets/figma-raw/sport-06.png')"><span>Ski alpin</span></a>
         <a class="bks-disc" href="backstages-discipline.html?disc=patinage-artistique" style="background-image: url('assets/sports/patinage-artistique.jpg')"><span>Patinage artistique</span></a>
