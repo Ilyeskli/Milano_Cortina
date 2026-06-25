@@ -195,4 +195,128 @@
     input.addEventListener("input", function () { renderResults(input.value); });
     renderResults("");
   }
+
+  // --- Likes des athlètes (cœurs des cartes poster) ---
+  // Toggle animé + persistance localStorage, partagé sur toutes les pages.
+  var LIKE_KEY = "bks-liked-athletes";
+
+  // Registre des athlètes (pour reconstruire « Ma liste » depuis les likes).
+  var ATHLETES = {
+    "Mikaela Shiffrin": { img: "shiffrin", sub: "Ski alpin · 🇺🇸", key: "shiffrin" },
+    "Marco Odermatt": { img: "odermatt", sub: "Ski alpin · 🇨🇭", key: "odermatt" },
+    "Lou Jeanmonnot": { img: "jeanmonnot", sub: "Biathlon · 🇫🇷", key: "jeanmonnot" },
+    "Federica Brignone": { img: "brignone", sub: "Ski alpin · 🇮🇹" },
+    "Lara James": { img: "james", sub: "Ski alpin · 🇬🇧" },
+    "Eileen Gu": { img: "gu", sub: "Ski acrobatique · 🇨🇳" },
+    "Chloe Kim": { img: "kim", sub: "Snowboard · 🇺🇸" },
+    "Johannes Klæbo": { img: "klaebo", sub: "Ski de fond · 🇳🇴" },
+    "Ilia Malinin": { img: "malinin", sub: "Patinage artistique · 🇺🇸" },
+    "Kaori Sakamoto": { img: "sakamoto", sub: "Patinage · 🇯🇵" },
+    "Ryōyū Kobayashi": { img: "kobayashi", sub: "Saut à ski · 🇯🇵" },
+    "Jordan Stolz": { img: "stolz", sub: "Patinage de vitesse · 🇺🇸" },
+    "Suzanne Schulting": { img: "schulting", sub: "Short-track · 🇳🇱" },
+    "Jessie Diggins": { img: "diggins", sub: "Ski de fond · 🇺🇸" },
+    "Jarl Magnus Riiber": { img: "riiber", sub: "Combiné nordique · 🇳🇴" },
+    "Sturla Holm Lægreid": { img: "laegreid", sub: "Biathlon · 🇳🇴" },
+    "Connor McDavid": { img: "mcdavid", sub: "Hockey · 🇨🇦" },
+  };
+  function getLiked() {
+    try { return JSON.parse(localStorage.getItem(LIKE_KEY)) || []; } catch (e) { return []; }
+  }
+  function setLiked(arr) {
+    try { localStorage.setItem(LIKE_KEY, JSON.stringify(arr)); } catch (e) {}
+  }
+  function likeName(like) {
+    var p = like.closest(".bks-poster");
+    var n = p && p.querySelector(".bks-poster-name");
+    return n ? n.textContent.trim() : "";
+  }
+  function applyLikeState(like, on) {
+    var name = likeName(like);
+    like.classList.toggle("is-liked", on);
+    like.setAttribute("aria-pressed", on ? "true" : "false");
+    like.setAttribute("aria-label", (on ? "Retirer " : "Ajouter ") + name + (on ? " de" : " à") + " Ma liste");
+  }
+  function toggleLike(like) {
+    var name = likeName(like);
+    if (!name) return;
+    var liked = getLiked();
+    var i = liked.indexOf(name);
+    var on;
+    if (i > -1) { liked.splice(i, 1); on = false; } else { liked.push(name); on = true; }
+    setLiked(liked);
+    applyLikeState(like, on);
+    like.classList.remove("is-animating");
+    void like.offsetWidth; // relance l'animation
+    like.classList.add("is-animating");
+    renderMaListe(); // reflète le changement sur la page Compte (no-op ailleurs)
+  }
+
+  // « Ma liste » (page Compte) reconstruite depuis les likes réels.
+  function maListePoster(name) {
+    var a = ATHLETES[name] || {};
+    var href = a.key ? "profil.html?athlete=" + a.key : "profil.html";
+    var bg = a.img ? "background-image: url('assets/athletes/" + a.img + ".jpg')" : "";
+    return (
+      '<a class="bks-poster" href="' + href + '">' +
+      '<span class="bks-poster-img" style="' + bg + '">' +
+      '<span class="bks-poster-like is-liked" data-like-ready="1" role="button" tabindex="0" aria-pressed="true" aria-label="Retirer ' + name + ' de Ma liste">♥</span></span>' +
+      '<p class="bks-poster-name">' + name + "</p>" +
+      '<p class="bks-poster-sub">' + (a.sub || "") + "</p></a>"
+    );
+  }
+  function renderMaListe() {
+    var rail = document.getElementById("bks-ma-liste");
+    if (!rail) return;
+    var liked = getLiked();
+    rail.innerHTML = liked.length
+      ? liked.map(maListePoster).join("")
+      : '<p class="bks-liste-empty">Votre liste est vide. Touchez le ♥ sur un athlète pour l\'ajouter ici.</p>';
+    // Met à jour le compteur « X dans Ma liste » de l'en-tête profil.
+    var stats = document.querySelector(".bks-profile-stats");
+    if (stats) {
+      [].forEach.call(stats.querySelectorAll("span"), function (s) {
+        if (/Ma liste/.test(s.textContent)) {
+          var b = s.querySelector("b");
+          if (b) b.textContent = liked.length;
+        }
+      });
+    }
+  }
+  function initLikes() {
+    var liked = getLiked();
+    [].forEach.call(document.querySelectorAll(".bks-poster-like"), function (like) {
+      if (like.dataset.likeReady) {
+        applyLikeState(like, liked.indexOf(likeName(like)) > -1);
+        return;
+      }
+      like.dataset.likeReady = "1";
+      like.removeAttribute("aria-hidden");
+      like.setAttribute("role", "button");
+      like.setAttribute("tabindex", "0");
+      applyLikeState(like, liked.indexOf(likeName(like)) > -1);
+    });
+  }
+  document.addEventListener("click", function (e) {
+    var like = e.target.closest && e.target.closest(".bks-poster-like");
+    if (!like) return;
+    e.preventDefault();
+    e.stopPropagation();
+    toggleLike(like);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+    var like = e.target.closest && e.target.closest(".bks-poster-like");
+    if (!like) return;
+    e.preventDefault();
+    toggleLike(like);
+  });
+  function refreshLikes() { renderMaListe(); initLikes(); }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", refreshLikes);
+  } else {
+    refreshLikes();
+  }
+  // Rattrape les posters générés en JS (page discipline) après le rendu.
+  window.addEventListener("load", refreshLikes);
 })();
