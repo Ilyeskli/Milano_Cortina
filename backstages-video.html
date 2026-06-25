@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Olympic Backstages — Slalom géant messieurs — Milano Cortina 2026</title>
-    <link rel="stylesheet" href="styles.css?v=77" />
+    <title>Olympic Backstages — Descente messieurs — Milano Cortina 2026</title>
+    <link rel="stylesheet" href="styles.css?v=84" />
   </head>
   <body class="page-backstages">
     <div id="bks-shell"></div>
@@ -12,14 +12,20 @@
 
     <main id="top">
       <!-- Lecteur vidéo -->
-      <section class="bks-player" style="background-image: url('assets/figma-raw/sport-06.png')" aria-label="Lecteur vidéo">
-        <a class="bks-player-back" href="backstages-discipline.html">←&nbsp;&nbsp;Retour</a>
+      <section class="bks-player" id="bks-player" aria-label="Lecteur vidéo">
+        <video id="bks-video" playsinline preload="metadata" poster="assets/figma-raw/hero-still.jpg">
+          <source src="assets/figma-raw/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div class="bks-player-yt" id="bks-yt-wrap"><div id="bks-yt"></div></div>
+        <div class="bks-player-poster" id="bks-poster" aria-hidden="true"></div>
+        <button class="bks-player-surface" id="bks-surface" type="button" aria-label="Lecture ou pause"></button>
+        <a class="bks-player-back" href="backstages-discipline.html?disc=ski-alpin">←&nbsp;&nbsp;Retour</a>
         <span class="bks-player-live"><span></span>En direct</span>
-        <button class="bks-player-play" type="button" aria-label="Lecture"></button>
+        <button class="bks-player-play" id="bks-play" type="button" aria-label="Lire la vidéo"></button>
         <div class="bks-player-controls">
-          <div class="bks-player-bar"><div class="bks-player-fill"></div></div>
+          <div class="bks-player-bar" id="bks-bar"><div class="bks-player-fill" id="bks-fill"></div></div>
           <div class="bks-player-row">
-            <span>12:34&nbsp;&nbsp;/&nbsp;&nbsp;45:00</span>
+            <span id="bks-time">00:00&nbsp;&nbsp;/&nbsp;&nbsp;00:00</span>
             <span class="bks-player-opts">
               <span class="bks-player-opt">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>
@@ -33,10 +39,10 @@
                 <svg width="15" height="15" viewBox="0 0 14 14" aria-hidden="true"><rect x="0" y="8" width="3" height="6" rx="1" fill="currentColor"/><rect x="5.5" y="4" width="3" height="10" rx="1" fill="currentColor"/><rect x="11" y="0" width="3" height="14" rx="1" fill="currentColor"/></svg>
                 <span class="bks-opt-txt">Stats</span>
               </button>
-              <span class="bks-player-opt">
+              <button class="bks-player-opt bks-player-fsbtn" id="bks-fs" type="button" aria-label="Plein écran">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
                 <span class="bks-opt-txt">Plein écran</span>
-              </span>
+              </button>
             </span>
           </div>
         </div>
@@ -57,10 +63,11 @@
                   <span>Ski alpin · 🇨🇭 Suisse · Dossard 8</span>
                 </div>
               </div>
-              <div class="bks-stat-row"><span>Vitesse actuelle</span><b>112 km/h</b></div>
-              <div class="bks-stat-row"><span>Intermédiaire 1</span><b>18.42 <em>+0.00</em></b></div>
-              <div class="bks-stat-row"><span>Intermédiaire 2</span><b>41.07 <em>+0.12</em></b></div>
-              <div class="bks-stat-row"><span>Écart au meilleur</span><b>+0.12 s</b></div>
+              <div class="bks-stat-row"><span>Temps de course</span><b id="stat-elapsed">0.00 s</b></div>
+              <div class="bks-stat-row"><span>Vitesse actuelle</span><b id="stat-speed">0 km/h</b></div>
+              <div class="bks-stat-row"><span>Intermédiaire 1</span><b id="stat-int1">—</b></div>
+              <div class="bks-stat-row"><span>Intermédiaire 2</span><b id="stat-int2">—</b></div>
+              <div class="bks-stat-row"><span>Écart au meilleur</span><b id="stat-ecart">—</b></div>
             </div>
 
             <div class="bks-stats-sec">
@@ -102,15 +109,15 @@
       <!-- Infos -->
       <section class="bks-vinfo" aria-labelledby="v-title">
         <span class="bks-dbadge">Ski alpin</span>
-        <h1 id="v-title">Slalom géant messieurs</h1>
-        <p class="bks-vmeta">En direct de Bormio · Stelvio Ski Centre · 45 min · 12 450 spectateurs</p>
+        <h1 id="v-title">Descente messieurs</h1>
+        <p class="bks-vmeta">En direct de Bormio · Stelvio Ski Centre · 1 h 42 · 12 450 spectateurs</p>
         <div class="bks-vactions">
-          <button class="bks-vbtn bks-vbtn-primary" type="button">► Regarder en direct</button>
+          <button class="bks-vbtn bks-vbtn-primary" type="button" id="bks-watch">► Regarder en direct</button>
           <button class="bks-vbtn" type="button">+ Ma liste</button>
           <button class="bks-vbtn" type="button">♥ J'aime</button>
           <button class="bks-vbtn" type="button">↗ Partager</button>
         </div>
-        <p class="bks-vdesc">La piste Stelvio de Bormio accueille le slalom géant messieurs, l'une des épreuves les plus attendues des Jeux. Sur l'une des descentes les plus exigeantes du circuit, les meilleurs spécialistes mondiaux s'affrontent en deux manches pour décrocher l'or olympique. Commentaire en français et statistiques en temps réel tout au long de la course.</p>
+        <p class="bks-vdesc">La mythique piste Stelvio de Bormio accueille la descente messieurs, l'épreuve reine du ski alpin. Sur l'une des pistes les plus rapides et exigeantes du circuit, les meilleurs descendeurs du monde s'élancent à plus de 130 km/h pour décrocher l'or olympique. Commentaire en français et statistiques en temps réel tout au long de la course.</p>
       </section>
 
       <!-- Dans la même discipline -->
@@ -172,6 +179,6 @@
 
     <div id="site-footer"></div>
     <script src="site-footer.js?v=2"></script>
-    <script src="backstages-video.js?v=1"></script>
+    <script src="backstages-video.js?v=7"></script>
   </body>
 </html>

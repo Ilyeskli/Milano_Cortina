@@ -2517,14 +2517,79 @@ body.page-backstages { background: #0a0b15; color: #fff; overflow-x: hidden; }
   overflow: hidden;
   background: #05060d center / cover no-repeat;
 }
+.bks-player video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #05060d;
+}
+.bks-player .bks-player-yt {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #05060d;
+}
+.bks-player-yt iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 56.25vw; /* couvre la largeur en 16:9, recadré en hauteur */
+  min-height: 100%;
+  border: 0;
+  pointer-events: none;
+}
+.bks-player .bks-player-poster {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: #05060d url("assets/figma-raw/hero-still.jpg") center / cover no-repeat;
+  transition: opacity 350ms ease;
+}
+.bks-player.is-playing .bks-player-poster { opacity: 0; }
+.bks-player .bks-player-surface {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
 .bks-player::after {
   position: absolute;
   inset: 0;
+  z-index: 1;
   content: "";
   pointer-events: none;
   background: linear-gradient(180deg, rgba(5, 10, 31, 0.55) 0%, rgba(5, 10, 31, 0.18) 42%, rgba(5, 10, 31, 0.5) 82%, rgba(5, 10, 31, 0.92) 100%);
 }
-.bks-player > * { position: relative; z-index: 1; }
+.bks-player > * { position: relative; z-index: 2; }
+/* Quand la vidéo joue, le gros bouton play s'efface (réapparaît au survol/pause) */
+/* Gros bouton play visible uniquement à l'arrêt (jamais pendant la lecture) */
+.bks-player.is-playing .bks-player-play { opacity: 0; pointer-events: none; }
+.bks-player-play { transition: opacity 200ms ease, transform 140ms ease; }
+.bks-player-bar { cursor: pointer; }
+
+/* Auto-masquage de l'interface après inactivité de la souris (comme un vrai lecteur) */
+.bks-player-controls,
+.bks-player-back,
+.bks-player-live { transition: opacity 280ms ease; }
+.bks-player.is-idle { cursor: none; }
+.bks-player.is-idle .bks-player-controls,
+.bks-player.is-idle .bks-player-back,
+.bks-player.is-idle .bks-player-live,
+.bks-player.is-idle .bks-player-play { opacity: 0; pointer-events: none; }
+
+/* Plein écran : le lecteur remplit l'écran */
+.bks-player:fullscreen { width: 100vw; height: 100vh; }
+.bks-player:-webkit-full-screen { width: 100vw; height: 100vh; }
+.bks-player-fsbtn { background: none; border: 0; color: inherit; font: inherit; padding: 0; cursor: pointer; }
 .bks-player-back {
   position: absolute;
   top: 28px;
