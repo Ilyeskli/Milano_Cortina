@@ -2206,6 +2206,56 @@ body.page-backstages { background: #0a0b15; color: #fff; overflow-x: hidden; }
 .bks-grid-posters { grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); }
 .bks-grid .bks-card, .bks-grid .bks-disc { flex: none; }
 .bks-grid-posters .bks-poster { flex: none; }
+.bks-card[hidden] { display: none; }
+
+/* Page head — ligne de stats */
+.bks-pagehead-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+  font-weight: 700;
+}
+.bks-pagehead-stats b { color: #fff; font-weight: 900; }
+
+/* Filtres par discipline (dark, frosted) */
+.bks-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 22px var(--page-gutter) 0;
+  scrollbar-width: none;
+}
+.bks-chip {
+  height: 38px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+.bks-chip:hover { border-color: rgba(255, 255, 255, 0.5); color: #fff; }
+.bks-chip.is-active {
+  border-color: transparent;
+  background: linear-gradient(105deg, var(--magenta), var(--violet));
+  color: #fff;
+}
+.bks-grid-empty { padding: 4px var(--page-gutter) 56px; color: rgba(255, 255, 255, 0.6); font-size: 16px; }
+.bks-grid-empty[hidden] { display: none; }
+
+@media (max-width: 760px) {
+  /* Les filtres défilent horizontalement plutôt que de s'empiler */
+  .bks-filters { flex-wrap: nowrap; overflow-x: auto; }
+  .bks-filters::-webkit-scrollbar { display: none; }
+  .bks-chip { flex: none; }
+}
 
 /* Discipline detail page (hero + stats) */
 .bks-dhero {
