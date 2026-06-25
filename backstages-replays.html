@@ -11,16 +11,20 @@
     <script src="backstages-shell.js?v=4"></script>
 
     <main id="top">
-      <header class="bks-pagehead">
-        <span class="bks-kicker">À la demande</span>
-        <h1>Replays</h1>
+      <!-- Hero -->
+      <section class="bks-dhero" style="background-image: url('assets/sites/milano.jpg')" aria-labelledby="r-title">
+        <span class="bks-dbadge">À la demande</span>
+        <h1 id="r-title">Replays</h1>
         <p>Revivez chaque épreuve en intégralité, quand vous voulez. Filtrez par discipline pour retrouver vos moments préférés des Jeux.</p>
-        <div class="bks-pagehead-stats">
-          <span><b>240</b> épreuves à revoir</span>
-          <span><b>16</b> disciplines</span>
-          <span>Cérémonies &amp; temps forts inclus</span>
-        </div>
-      </header>
+      </section>
+
+      <!-- Stats -->
+      <section class="bks-dstats" aria-label="Chiffres clés">
+        <div><p class="bks-dstat-num">240</p><p class="bks-dstat-label">épreuves à revoir</p></div>
+        <div><p class="bks-dstat-num">16</p><p class="bks-dstat-label">disciplines</p></div>
+        <div><p class="bks-dstat-num">3</p><p class="bks-dstat-label">cérémonies</p></div>
+        <div><p class="bks-dstat-num">100+</p><p class="bks-dstat-label">heures de contenu</p></div>
+      </section>
 
       <!-- Filtres discipline -->
       <div class="bks-filters" role="tablist" aria-label="Filtrer par discipline">
