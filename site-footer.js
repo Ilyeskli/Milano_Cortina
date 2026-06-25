@@ -2,9 +2,8 @@
    Usage: <div id="site-footer"></div><script src="site-footer.js"></script> */
 (function () {
   const path = location.pathname.split("/").pop() || "index.html";
-  const isHome = path === "" || path === "index.html";
-  const ep = isHome ? "#epreuves" : "index.html#epreuves";
-  const bs = isHome ? "#backstages" : "index.html#backstages";
+  const ep = "epreuves.html";
+  const bs = "backstages.html";
 
   const markup = `
     <footer class="home-footer" id="login">

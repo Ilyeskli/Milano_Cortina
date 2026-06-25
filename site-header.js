@@ -10,10 +10,8 @@
   // site-wide. `isHome` is derived from the URL above, not from this class.
   document.body.classList.add("home-page");
 
-  // Backstages stays a home section anchor; Épreuves now has its own page.
-  const bs = isHome ? "#backstages" : "index.html#backstages";
   // The logo is the canonical "home" control — it always leads to the accueil,
-  // from any page (standard site convention). Épreuves stays a section, not home.
+  // from any page (standard site convention).
   const logoHref = "index.html";
 
   // Which top-nav entry is the current page.
@@ -23,6 +21,7 @@
   else if (path === "news.html" || path.startsWith("news-article")) active = "news";
   else if (path === "billetterie.html") active = "billetterie";
   else if (path === "medailles.html" || path === "classement.html") active = "medailles";
+  else if (path === "backstages.html") active = "backstages";
 
   const navLink = (href, key, label) =>
     `<a href="${href}"${active === key ? ' class="active" aria-current="page"' : ""}>${label}</a>`;
@@ -58,7 +57,7 @@
         ${navLink("news.html", "news", "News")}
         ${navLink("billetterie.html", "billetterie", "Billetterie")}
         ${navLink("medailles.html", "medailles", "Médailles")}
-        ${navLink(bs, "backstages", "Backstages")}
+        ${navLink("backstages.html", "backstages", "Backstages")}
       </nav>
 
       <div class="mc-actions">

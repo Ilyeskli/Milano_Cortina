@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Olympic Backstages — Slalom géant messieurs — Milano Cortina 2026</title>
+    <link rel="stylesheet" href="styles.css?v=66" />
+  </head>
+  <body class="page-backstages">
+    <div id="bks-shell"></div>
+    <script src="backstages-shell.js?v=2"></script>
+
+    <main id="top">
+      <!-- Lecteur vidéo -->
+      <section class="bks-player" style="background-image: url('assets/figma-raw/sport-06.png')" aria-label="Lecteur vidéo">
+        <a class="bks-player-back" href="backstages-discipline.html">←&nbsp;&nbsp;Retour</a>
+        <span class="bks-player-live"><span></span>En direct</span>
+        <button class="bks-player-play" type="button" aria-label="Lecture"></button>
+        <div class="bks-player-controls">
+          <div class="bks-player-bar"><div class="bks-player-fill"></div></div>
+          <div class="bks-player-row">
+            <span>12:34&nbsp;&nbsp;/&nbsp;&nbsp;45:00</span>
+            <span class="bks-player-opts">
+              <span class="bks-player-opt">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>
+                <span class="bks-opt-txt">Volume</span>
+              </span>
+              <span class="bks-player-opt">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V15z"/></svg>
+                <span class="bks-opt-txt">Qualité</span>
+              </span>
+              <button class="bks-statbtn" type="button" aria-expanded="false" aria-controls="bks-stats">
+                <svg width="15" height="15" viewBox="0 0 14 14" aria-hidden="true"><rect x="0" y="8" width="3" height="6" rx="1" fill="currentColor"/><rect x="5.5" y="4" width="3" height="10" rx="1" fill="currentColor"/><rect x="11" y="0" width="3" height="14" rx="1" fill="currentColor"/></svg>
+                <span class="bks-opt-txt">Stats</span>
+              </button>
+              <span class="bks-player-opt">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+                <span class="bks-opt-txt">Plein écran</span>
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Panneau statistiques en direct -->
+        <aside class="bks-stats" id="bks-stats" aria-label="Statistiques en direct">
+          <div class="bks-stats-head">
+            <h3><span class="dot" aria-hidden="true"></span>Stats en direct</h3>
+            <button class="bks-stats-close" type="button" aria-label="Fermer le panneau">×</button>
+          </div>
+          <div class="bks-stats-body">
+            <div class="bks-stats-sec">
+              <h4>En piste maintenant</h4>
+              <div class="bks-stats-now">
+                <span class="bks-stats-now-img" style="background-image: url('assets/athletes/odermatt.jpg')"></span>
+                <div>
+                  <b>Marco Odermatt</b>
+                  <span>Ski alpin · 🇨🇭 Suisse · Dossard 8</span>
+                </div>
+              </div>
+              <div class="bks-stat-row"><span>Vitesse actuelle</span><b>112 km/h</b></div>
+              <div class="bks-stat-row"><span>Intermédiaire 1</span><b>18.42 <em>+0.00</em></b></div>
+              <div class="bks-stat-row"><span>Intermédiaire 2</span><b>41.07 <em>+0.12</em></b></div>
+              <div class="bks-stat-row"><span>Écart au meilleur</span><b>+0.12 s</b></div>
+            </div>
+
+            <div class="bks-stats-sec">
+              <h4>Classement provisoire</h4>
+              <ol class="bks-rank">
+                <li class="me"><span class="pos">1</span><span>M. Odermatt 🇨🇭</span><span class="t">1:08.45</span></li>
+                <li><span class="pos">2</span><span>H. Kristoffersen 🇳🇴</span><span class="t">+0.31</span></li>
+                <li><span class="pos">3</span><span>M. Schwarz 🇦🇹</span><span class="t">+0.58</span></li>
+                <li><span class="pos">4</span><span>A. Pinturault 🇫🇷</span><span class="t">+0.74</span></li>
+                <li><span class="pos">5</span><span>L. Braathen 🇧🇷</span><span class="t">+0.91</span></li>
+              </ol>
+            </div>
+
+            <div class="bks-stats-sec">
+              <h4>La discipline en chiffres</h4>
+              <div class="bks-stat-grid">
+                <div class="bks-stat-cell"><b>58</b><span>concurrents engagés</span></div>
+                <div class="bks-stat-cell"><b>22</b><span>déjà partis</span></div>
+                <div class="bks-stat-cell"><b>1</b><span>en piste</span></div>
+                <div class="bks-stat-cell"><b>35</b><span>encore à venir</span></div>
+              </div>
+              <div class="bks-stat-row"><span>Meilleur temps</span><b>1:08.45</b></div>
+              <div class="bks-stat-row"><span>Manche en cours</span><b>1<sup>re</sup> manche</b></div>
+            </div>
+
+            <div class="bks-stats-sec">
+              <h4>Conditions sur la piste</h4>
+              <div class="bks-stat-grid">
+                <div class="bks-stat-cell"><b>-4 °C</b><span>température</span></div>
+                <div class="bks-stat-cell"><b>Dure</b><span>neige damée</span></div>
+                <div class="bks-stat-cell"><b>8 km/h</b><span>vent de face</span></div>
+                <div class="bks-stat-cell"><b>Bonne</b><span>visibilité</span></div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Infos -->
+      <section class="bks-vinfo" aria-labelledby="v-title">
+        <span class="bks-dbadge">Ski alpin</span>
+        <h1 id="v-title">Slalom géant messieurs</h1>
+        <p class="bks-vmeta">En direct de Bormio · Stelvio Ski Centre · 45 min · 12 450 spectateurs</p>
+        <div class="bks-vactions">
+          <button class="bks-vbtn bks-vbtn-primary" type="button">► Regarder en direct</button>
+          <button class="bks-vbtn" type="button">+ Ma liste</button>
+          <button class="bks-vbtn" type="button">♥ J'aime</button>
+          <button class="bks-vbtn" type="button">↗ Partager</button>
+        </div>
+        <p class="bks-vdesc">La piste Stelvio de Bormio accueille le slalom géant messieurs, l'une des épreuves les plus attendues des Jeux. Sur l'une des descentes les plus exigeantes du circuit, les meilleurs spécialistes mondiaux s'affrontent en deux manches pour décrocher l'or olympique. Commentaire en français et statistiques en temps réel tout au long de la course.</p>
+      </section>
+
+      <!-- Dans la même discipline -->
+      <section class="bks-rail-sec" aria-labelledby="same-title">
+        <div class="bks-rail-head">
+          <h2 id="same-title">Dans la même discipline</h2>
+          <a class="bks-seeall" href="backstages-discipline.html">Voir tout →</a>
+        </div>
+        <div class="bks-rail">
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/valtellina.jpg')"><span class="bks-card-badge">En direct</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Descente messieurs</p><p class="bks-card-meta"><span>Bormio</span><span>En cours</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/cortina.jpg')"><span class="bks-card-badge">À venir</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Slalom géant dames</p><p class="bks-card-meta"><span>Cortina</span><span>14:00</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/figma-raw/sport-06.png')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Super-G messieurs</p><p class="bks-card-meta"><span>Bormio</span><span>1:08:25</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/news-img/trecime.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Super-G dames</p><p class="bks-card-meta"><span>Cortina</span><span>1:02:10</span></p></div></a>
+        </div>
+      </section>
+
+      <!-- Temps forts de l'épreuve -->
+      <section class="bks-rail-sec" aria-labelledby="hl-title">
+        <div class="bks-rail-head">
+          <h2 id="hl-title">Temps forts de l'épreuve</h2>
+          <a class="bks-seeall" href="backstages-temps-forts.html">Voir tout →</a>
+        </div>
+        <div class="bks-rail">
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/figma-raw/sport-06.png')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">La première manche en intégralité</p><p class="bks-card-meta"><span>04:12</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/valtellina.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Le mur du Stelvio, passage clé</p><p class="bks-card-meta"><span>01:58</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/cortina.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Le meilleur temps intermédiaire</p><p class="bks-card-meta"><span>01:24</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/news-img/trecime.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">La sortie de piste du dossard 7</p><p class="bks-card-meta"><span>00:48</span></p></div></a>
+        </div>
+      </section>
+
+      <!-- Les concurrents en lice -->
+      <section class="bks-rail-sec" aria-labelledby="cc-title">
+        <div class="bks-rail-head">
+          <h2 id="cc-title">Les concurrents en lice</h2>
+          <a class="bks-seeall" href="tous-les-athletes.html">Voir tout →</a>
+        </div>
+        <div class="bks-rail">
+          <a class="bks-poster" href="profil.html?athlete=odermatt"><span class="bks-poster-img" style="background-image: url('assets/athletes/odermatt.jpg')"><span class="bks-poster-like" aria-hidden="true">♥</span></span><p class="bks-poster-name">Marco Odermatt</p><p class="bks-poster-sub">Ski alpin · 🇨🇭</p></a>
+          <a class="bks-poster" href="profil.html?athlete=shiffrin"><span class="bks-poster-img" style="background-image: url('assets/athletes/shiffrin.jpg')"><span class="bks-poster-like" aria-hidden="true">♥</span></span><p class="bks-poster-name">Mikaela Shiffrin</p><p class="bks-poster-sub">Ski alpin · 🇺🇸</p></a>
+          <a class="bks-poster" href="profil.html"><span class="bks-poster-img" style="background-image: url('assets/athletes/brignone.jpg')"><span class="bks-poster-like" aria-hidden="true">♥</span></span><p class="bks-poster-name">Federica Brignone</p><p class="bks-poster-sub">Ski alpin · 🇮🇹</p></a>
+          <a class="bks-poster" href="profil.html"><span class="bks-poster-img" style="background-image: url('assets/athletes/james.jpg')"><span class="bks-poster-like" aria-hidden="true">♥</span></span><p class="bks-poster-name">Lara James</p><p class="bks-poster-sub">Ski alpin · 🇬🇧</p></a>
+        </div>
+      </section>
+
+      <!-- À suivre ensuite -->
+      <section class="bks-rail-sec" aria-labelledby="next-title">
+        <div class="bks-rail-head">
+          <h2 id="next-title">À suivre ensuite</h2>
+          <a class="bks-seeall" href="backstages-a-venir.html">Voir tout →</a>
+        </div>
+        <div class="bks-rail">
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/sites/cortina.jpg')"><span class="bks-card-badge">À venir</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Slalom messieurs · 2e manche</p><p class="bks-card-meta"><span>Bormio</span><span>Demain · 10:30</span></p></div></a>
+          <a class="bks-card" href="backstages-video.html" style="background-image: url('assets/figma-raw/sport-06.png')"><span class="bks-card-badge">À venir</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Combiné par équipes</p><p class="bks-card-meta"><span>Cortina</span><span>Demain · 13:00</span></p></div></a>
+          <a class="bks-card" href="backstages-coulisses.html" style="background-image: url('assets/sports/ski-acrobatique.jpg')"><span class="bks-card-badge">Coulisses</span><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Dans la tête d'un slalomeur</p><p class="bks-card-meta"><span>11:20</span></p></div></a>
+          <a class="bks-card" href="backstages-replays.html" style="background-image: url('assets/sites/valtellina.jpg')"><span class="bks-card-play" aria-hidden="true"></span><div class="bks-card-body"><p class="bks-card-title">Le résumé de la journée</p><p class="bks-card-meta"><span>Bormio</span><span>18:30</span></p></div></a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="site-footer.js?v=2"></script>
+    <script src="backstages-video.js?v=1"></script>
+  </body>
+</html>
