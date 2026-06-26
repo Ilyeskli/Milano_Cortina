@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mon compte - Milano Cortina 2026</title>
+    <link rel="stylesheet" href="styles.css?v=98" />
+  </head>
+  <body class="page-compte">
+    <div id="site-header"></div>
+    <script src="site-header.js?v=7"></script>
+
+    <main>
+      <!-- Bannière de page -->
+      <section class="med-pageheader">
+        <nav class="med-breadcrumb" aria-label="Fil d'ariane">
+          <a href="index.html">Accueil</a>
+          <span aria-hidden="true">/</span>
+          <span>Mon compte</span>
+        </nav>
+        <h1>Mon compte</h1>
+      </section>
+
+      <section class="section med-section" aria-label="Espace personnel">
+        <div class="acct-grid">
+          <!-- Colonne profil + navigation -->
+          <aside class="acct-side">
+            <div class="acct-profile">
+              <div class="acct-avatar" aria-hidden="true">IK</div>
+              <p class="acct-name">Ilyes Kolli</p>
+              <p class="acct-email">ilyes.kolli@exemple.com</p>
+              <p class="acct-since">Membre depuis janvier 2026</p>
+            </div>
+            <nav class="acct-menu" aria-label="Sections du compte">
+              <a class="is-active" href="#commandes">Mes commandes</a>
+              <a href="#infos">Mes informations</a>
+              <a href="billetterie.html">Réserver des billets</a>
+              <a class="acct-logout" href="index.html">Se déconnecter</a>
+            </nav>
+          </aside>
+
+          <!-- Contenu -->
+          <div class="acct-main">
+            <!-- Mes commandes -->
+            <div class="acct-block" id="commandes">
+              <div class="acct-block-head">
+                <h2>Mes commandes</h2>
+                <span class="acct-count">1 commande</span>
+              </div>
+
+              <article class="order-card">
+                <header class="order-card-head">
+                  <div>
+                    <p class="order-num">Commande #MC26-48172</p>
+                    <p class="order-date">Passée le 6 février 2026</p>
+                  </div>
+                  <span class="status status-success"><i></i>Confirmée</span>
+                </header>
+                <div class="order-card-body">
+                  <div class="order-recap">
+                    <p class="recap-line"><span>Épreuve</span><strong>Ski alpin — Descente Hommes</strong></p>
+                    <p class="recap-line"><span>Date</span><strong>12 fév. 2026 · 11:00</strong></p>
+                    <p class="recap-line"><span>Site</span><strong>Cortina d'Ampezzo</strong></p>
+                    <p class="recap-line"><span>Catégorie</span><strong>B × 2 places</strong></p>
+                    <hr class="panel-sep" />
+                    <div class="total-row recap-total"><span>Total payé</span><strong>240 €</strong></div>
+                    <button type="button" class="btn-select" data-download>Télécharger les billets</button>
+                  </div>
+                  <div class="eticket">
+                    <span class="eticket-badge">E-billet</span>
+                    <h3>Milano Cortina 2026</h3>
+                    <p class="eticket-meta">Ski alpin — Descente Hommes</p>
+                    <p class="eticket-meta">12 fév. 2026 · 11:00 · Cortina d'Ampezzo</p>
+                    <div class="eticket-qr"><img src="assets/qr-demo.svg?v=1" alt="QR code du billet" /></div>
+                    <p class="eticket-foot">Catégorie B · 2 places · Tribune couverte</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Mes informations -->
+            <div class="acct-block" id="infos">
+              <div class="acct-block-head">
+                <h2>Mes informations</h2>
+              </div>
+              <div class="acct-info-grid">
+                <div class="acct-info"><span>Nom complet</span><strong>Ilyes Kolli</strong></div>
+                <div class="acct-info"><span>E-mail</span><strong>ilyes.kolli@exemple.com</strong></div>
+                <div class="acct-info"><span>Téléphone</span><strong>+33 6 12 34 56 78</strong></div>
+                <div class="acct-info"><span>Pays</span><strong>France</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="site-footer.js?v=9"></script>
+
+    <script>
+      // Retour visuel sur le téléchargement des billets (démo statique).
+      document.querySelectorAll("[data-download]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const initial = btn.textContent;
+          btn.textContent = "Billets téléchargés ✓";
+          btn.disabled = true;
+          window.setTimeout(() => {
+            btn.textContent = initial;
+            btn.disabled = false;
+          }, 2200);
+        });
+      });
+    </script>
+  </body>
+</html>

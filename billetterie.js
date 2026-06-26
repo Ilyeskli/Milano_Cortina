@@ -195,4 +195,139 @@
       q.setAttribute("aria-expanded", String(isOpen));
     });
   });
+
+  // ====== Parcours multi-étapes : sélection → infos & paiement → confirmation ======
+  const views = Array.from(document.querySelectorAll(".step-view"));
+  const steps = Array.from(document.querySelectorAll(".step-indicator li"));
+  const bookingSection = document.querySelector(".section-booking");
+
+  // Quelles étapes du stepper sont actives / complétées selon la vue.
+  const STEP_MAP = {
+    select: { current: [0, 1], done: [] },
+    checkout: { current: [2, 3], done: [0, 1] },
+    confirm: { current: [4], done: [0, 1, 2, 3] },
+  };
+  function setStepper(view) {
+    const m = STEP_MAP[view] || STEP_MAP.select;
+    steps.forEach((li, i) => {
+      li.classList.toggle("is-current", m.current.includes(i));
+      li.classList.toggle("is-done", m.done.includes(i));
+    });
+  }
+  function showView(view) {
+    views.forEach((v) => v.classList.toggle("is-active", v.dataset.view === view));
+    setStepper(view);
+    if (bookingSection) bookingSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // Instantané de la sélection courante (session + catégorie + quantité).
+  function getSelection() {
+    const name = nameEl ? nameEl.textContent.trim() : "";
+    const parts = (metaEl ? metaEl.textContent : "").split("·").map((s) => s.trim());
+    const checked = document.querySelector('input[name="categorie"]:checked');
+    const unit = checked ? parseInt(checked.value, 10) : 0;
+    return {
+      name,
+      date: parts[0] || "",
+      site: parts[1] || "",
+      time: parts[2] || "",
+      letter: checked ? checked.dataset.cat : "—",
+      unit,
+      qty: quantity,
+      total: unit * quantity,
+    };
+  }
+  const setText = (sel, txt) => {
+    const el = document.querySelector(sel);
+    if (el) el.textContent = txt;
+  };
+
+  // Récap de la vue paiement.
+  function fillCheckoutRecap() {
+    const s = getSelection();
+    setText("[data-recap-name]", s.name);
+    setText("[data-recap-meta]", `${s.date} · ${s.site} · ${s.time}`);
+    setText("[data-recap-cat]", `Catégorie ${s.letter} × ${s.qty}`);
+    setText("[data-recap-sub]", `${s.total} €`);
+    setText("[data-recap-total]", `${s.total} €`);
+    setText("[data-pay-total]", `${s.total} €`);
+  }
+
+  // Récap + e-billet de la confirmation.
+  function fillConfirm() {
+    const s = getSelection();
+    const order = "#MC26-" + Math.floor(10000 + Math.random() * 89999);
+    const places = `${s.qty} ${s.qty > 1 ? "places" : "place"}`;
+    setText("[data-cf-order]", order);
+    setText("[data-cf-name]", s.name);
+    setText("[data-cf-date]", `${s.date} 2026 · ${s.time}`);
+    setText("[data-cf-site]", s.site);
+    setText("[data-cf-cat]", `${s.letter} × ${s.qty}`);
+    setText("[data-cf-total]", `${s.total} €`);
+    setText("[data-cf-et-name]", s.name);
+    setText("[data-cf-et-meta]", `${s.date} 2026 · ${s.time} · ${s.site}`);
+    setText("[data-cf-et-foot]", `Catégorie ${s.letter} · ${places} · Tribune couverte`);
+  }
+
+  // Sélection → paiement
+  document.querySelector("[data-go-checkout]")?.addEventListener("click", () => {
+    fillCheckoutRecap();
+    showView("checkout");
+  });
+  // Retour à la sélection
+  document.querySelector("[data-back-select]")?.addEventListener("click", () => showView("select"));
+
+  // --- Validation du formulaire de paiement ---
+  const validators = {
+    "ck-prenom": (v) => v.trim().length > 0,
+    "ck-nom": (v) => v.trim().length > 0,
+    "ck-email": (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+    "ck-card": (v) => /^[0-9\s]+$/.test(v) && v.replace(/\s/g, "").length >= 13,
+    "ck-exp": (v) => /^(0[1-9]|1[0-2])\/\d{2}$/.test(v.trim()),
+    "ck-cvc": (v) => /^[0-9]{3,4}$/.test(v.trim()),
+    "ck-name": (v) => v.trim().length > 0,
+  };
+  function validateField(id) {
+    const input = document.getElementById(id);
+    if (!input) return true;
+    const ok = validators[id](input.value);
+    input.closest(".field").classList.toggle("has-error", !ok);
+    return ok;
+  }
+  Object.keys(validators).forEach((id) => {
+    const input = document.getElementById(id);
+    input?.addEventListener("input", () => {
+      if (validators[id](input.value)) input.closest(".field").classList.remove("has-error");
+    });
+  });
+
+  // Payer → valider → confirmation
+  document.querySelector("[data-go-confirm]")?.addEventListener("click", () => {
+    let firstBad = null;
+    Object.keys(validators).forEach((id) => {
+      if (!validateField(id) && !firstBad) firstBad = document.getElementById(id);
+    });
+    if (firstBad) {
+      firstBad.focus();
+      firstBad.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    fillConfirm();
+    showView("confirm");
+  });
+
+  // Bouton « Télécharger mes billets » (retour visuel, démo statique)
+  const dl = document.querySelector("[data-download]");
+  dl?.addEventListener("click", () => {
+    const initial = dl.textContent;
+    dl.textContent = "Billets téléchargés ✓";
+    dl.disabled = true;
+    window.setTimeout(() => {
+      dl.textContent = initial;
+      dl.disabled = false;
+    }, 2200);
+  });
+
+  // État initial du stepper (vue sélection couvre les étapes 1 & 2).
+  setStepper("select");
 })();

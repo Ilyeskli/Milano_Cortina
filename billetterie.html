@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Milano Cortina 2026 - Billetterie</title>
-    <link rel="stylesheet" href="styles.css?v=96" />
+    <link rel="stylesheet" href="styles.css?v=98" />
   </head>
   <body class="page-billetterie">
     <div id="site-header"></div>
-    <script src="site-header.js?v=6"></script>
+    <script src="site-header.js?v=7"></script>
 
     <main id="top">
       <!-- Hero header -->
@@ -33,6 +33,9 @@
           <li><span>4</span> Paiement</li>
           <li><span>5</span> Confirmation</li>
         </ol>
+
+        <!-- ===== VUE 1 : sélection session + catégorie ===== -->
+        <div class="step-view is-active" data-view="select">
 
         <!-- Sport filters -->
         <div class="filter-pills" role="group" aria-label="Filtrer par sport">
@@ -198,10 +201,118 @@
               <strong data-total>240 €</strong>
             </div>
 
-            <button type="button" class="btn-cta panel-cta">Réserver mes billets</button>
+            <button type="button" class="btn-cta panel-cta" data-go-checkout>Réserver mes billets</button>
             <p class="panel-reassure"><i></i>Paiement 100% sécurisé · billets électroniques</p>
           </aside>
         </div>
+        </div><!-- /vue sélection -->
+
+        <!-- ===== VUE 2 : coordonnées & paiement ===== -->
+        <div class="step-view" data-view="checkout">
+          <button type="button" class="checkout-back" data-back-select>← Modifier ma sélection</button>
+          <h2 class="booking-vtitle">Vos informations &amp; paiement.</h2>
+          <div class="book-grid">
+            <form class="checkout-form" novalidate>
+              <fieldset>
+                <legend class="checkout-legend">Coordonnées</legend>
+                <div class="field-row">
+                  <div class="field">
+                    <label for="ck-prenom">Prénom <span class="req">*</span></label>
+                    <input id="ck-prenom" name="prenom" type="text" autocomplete="given-name" value="Ilyes" required />
+                    <p class="field-error">Champ requis.</p>
+                  </div>
+                  <div class="field">
+                    <label for="ck-nom">Nom <span class="req">*</span></label>
+                    <input id="ck-nom" name="nom" type="text" autocomplete="family-name" value="Kolli" required />
+                    <p class="field-error">Champ requis.</p>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="ck-email">E-mail <span class="req">*</span></label>
+                  <input id="ck-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" value="ilyes.kolli@exemple.com" required />
+                  <p class="field-error">Format d'e-mail invalide — vérifiez l'adresse.</p>
+                </div>
+                <div class="field">
+                  <label for="ck-tel">Téléphone</label>
+                  <input id="ck-tel" name="tel" type="tel" autocomplete="tel" placeholder="+33 6 12 34 56 78" value="+33 6 12 34 56 78" />
+                  <p class="field-help">Pour recevoir vos billets par SMS et les alertes de session.</p>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend class="checkout-legend">Paiement</legend>
+                <div class="field">
+                  <label for="ck-card">Numéro de carte <span class="req">*</span></label>
+                  <input id="ck-card" name="card" inputmode="numeric" autocomplete="cc-number" placeholder="4242 4242 4242 4242" value="4242 4242 4242 4242" required />
+                  <p class="field-error">Numéro de carte invalide.</p>
+                </div>
+                <div class="field-row">
+                  <div class="field">
+                    <label for="ck-exp">Expiration <span class="req">*</span></label>
+                    <input id="ck-exp" name="exp" autocomplete="cc-exp" placeholder="MM/AA" value="02/27" required />
+                    <p class="field-error">Date invalide.</p>
+                  </div>
+                  <div class="field">
+                    <label for="ck-cvc">CVC <span class="req">*</span></label>
+                    <input id="ck-cvc" name="cvc" inputmode="numeric" autocomplete="cc-csc" placeholder="123" value="123" required />
+                    <p class="field-error">Code invalide.</p>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="ck-name">Nom sur la carte <span class="req">*</span></label>
+                  <input id="ck-name" name="cardname" autocomplete="cc-name" placeholder="PRÉNOM NOM" value="ILYES KOLLI" required />
+                  <p class="field-error">Champ requis.</p>
+                </div>
+              </fieldset>
+            </form>
+
+            <aside class="book-panel checkout-recap" aria-label="Récapitulatif">
+              <h2 class="panel-title">Récapitulatif</h2>
+              <div class="panel-session">
+                <p class="panel-session-name" data-recap-name>Ski alpin — Descente Hommes</p>
+                <p class="panel-session-meta" data-recap-meta>12 fév. · Cortina d'Ampezzo · 11:00</p>
+              </div>
+              <hr class="panel-sep" />
+              <p class="recap-line"><span data-recap-cat>Catégorie B × 2</span><strong data-recap-sub>240 €</strong></p>
+              <hr class="panel-sep" />
+              <div class="total-row recap-total"><span>Total</span><strong data-recap-total>240 €</strong></div>
+              <button type="button" class="btn-cta panel-cta" data-go-confirm>Payer <span data-pay-total>240 €</span></button>
+              <p class="panel-reassure"><i></i>Paiement chiffré · 3-D Secure</p>
+            </aside>
+          </div>
+        </div><!-- /vue checkout -->
+
+        <!-- ===== VUE 3 : confirmation ===== -->
+        <div class="step-view" data-view="confirm">
+          <div class="confirm-head">
+            <span class="confirm-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7" /></svg></span>
+            <h2>Réservation confirmée !</h2>
+            <p>Vos billets électroniques ont été envoyés par e-mail. Retrouvez-les aussi dans votre espace personnel.</p>
+          </div>
+          <div class="confirm-grid">
+            <aside class="book-panel confirm-recap" aria-label="Récapitulatif de commande">
+              <h2 class="panel-title">Récapitulatif</h2>
+              <p class="recap-line"><span>Commande</span><strong data-cf-order>#MC26-48172</strong></p>
+              <p class="recap-line"><span>Épreuve</span><strong data-cf-name>Ski alpin — Descente Hommes</strong></p>
+              <p class="recap-line"><span>Date</span><strong data-cf-date>12 fév. 2026 · 11:00</strong></p>
+              <p class="recap-line"><span>Site</span><strong data-cf-site>Cortina d'Ampezzo</strong></p>
+              <p class="recap-line"><span>Catégorie</span><strong data-cf-cat>B × 2</strong></p>
+              <hr class="panel-sep" />
+              <div class="total-row recap-total"><span>Total payé</span><strong data-cf-total>240 €</strong></div>
+            </aside>
+            <div class="eticket">
+              <span class="eticket-badge">E-billet</span>
+              <h3>Milano Cortina 2026</h3>
+              <p class="eticket-meta" data-cf-et-name>Ski alpin — Descente Hommes</p>
+              <p class="eticket-meta" data-cf-et-meta>12 fév. 2026 · 11:00 · Cortina d'Ampezzo</p>
+              <div class="eticket-qr"><img src="assets/qr-demo.svg?v=1" alt="QR code du billet" /></div>
+              <p class="eticket-foot" data-cf-et-foot>Catégorie B · 2 places · Tribune couverte</p>
+            </div>
+          </div>
+          <div class="confirm-actions">
+            <button type="button" class="btn-cta" data-download>Télécharger mes billets</button>
+            <a class="btn-select" href="compte.html">Voir ma commande</a>
+          </div>
+        </div><!-- /vue confirmation -->
       </section>
 
       <!-- Réassurance -->
@@ -297,9 +408,9 @@
     </main>
 
     <div id="site-footer"></div>
-    <script src="site-footer.js?v=8"></script>
+    <script src="site-footer.js?v=9"></script>
 
     <script src="script.js?v=13"></script>
-    <script src="billetterie.js?v=3"></script>
+    <script src="billetterie.js?v=4"></script>
   </body>
 </html>

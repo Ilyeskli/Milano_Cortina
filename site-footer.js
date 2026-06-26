@@ -34,7 +34,7 @@
           <nav aria-label="Billetterie">
             <h2>Billetterie</h2>
             <a href="billetterie.html">Acheter</a>
-            <a href="profil.html">Mon compte</a>
+            <a href="compte.html">Mon compte</a>
             <a href="billetterie.html">Catégories de billets</a>
             <a href="billetterie.html">FAQ billetterie</a>
             <a href="billetterie.html">CGV</a>

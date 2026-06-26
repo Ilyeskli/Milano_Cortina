@@ -64,8 +64,8 @@
         <button class="flag-button" type="button" aria-label="Langue française">
           <img src="assets/home-final/france.svg" alt="" />
         </button>
-        <a class="login-link" href="profil.html">Se connecter</a>
-        <a class="signup-link" href="profil.html">S'inscrire</a>
+        <a class="login-link" href="compte.html">Se connecter</a>
+        <a class="signup-link" href="compte.html">S'inscrire</a>
       </div>
     </header>`;
 
