@@ -59,12 +59,15 @@
         <div class="home-footer-partners">
           <h2>Partenaires officiels</h2>
           <div>
-            <span>Coca-Cola</span>
-            <span>Visa</span>
-            <span>Samsung</span>
-            <span>Toyota</span>
-            <span>Allianz</span>
-            <span>OMEGA</span>
+            <img src="assets/partners/cocacola.svg?v=3" alt="Coca-Cola" />
+            <img src="assets/partners/visa.svg?v=3" alt="Visa" />
+            <img src="assets/partners/samsung.svg?v=3" alt="Samsung" />
+            <img src="assets/partners/airbnb.svg?v=1" alt="Airbnb" />
+            <img src="assets/partners/alibaba.svg?v=1" alt="Alibaba" />
+            <img src="assets/partners/allianz.png?v=1" alt="Allianz" />
+            <img src="assets/partners/omega.png?v=2" alt="OMEGA" />
+            <img src="assets/partners/deloitte.svg?v=1" alt="Deloitte" />
+            <img src="assets/partners/pg.svg?v=1" alt="Procter &amp; Gamble" />
           </div>
         </div>
         <div class="home-footer-bottom">

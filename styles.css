@@ -1818,6 +1818,52 @@ input {
 .art-back:hover { text-decoration: underline; }
 .art-related .section-head { margin-bottom: 6px; }
 
+/* Encadré « En bref » : résumé en points clés en tête d'article. */
+.art-summary {
+  margin: 0 0 32px;
+  padding: 22px 26px 24px;
+  border-radius: 16px;
+  background: linear-gradient(105deg, rgba(251, 0, 105, 0.06), rgba(247, 1, 255, 0.06));
+  border: 1px solid rgba(251, 0, 105, 0.18);
+}
+.art-summary-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  color: var(--magenta);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.art-summary-label svg { width: 16px; height: 16px; flex: none; }
+.art-summary ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 11px;
+}
+.art-summary li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--ink);
+  font-size: 16.5px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+.art-summary li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: linear-gradient(105deg, var(--magenta), var(--violet));
+}
+
 @media (max-width: 760px) {
   .art-hero { min-height: 380px; border-radius: 16px; padding: 24px; }
   .art-hero h1 { font-size: 32px; }
@@ -1826,6 +1872,8 @@ input {
   .art-body p { font-size: 17px; }
   .art-body h2 { font-size: 24px; }
   .art-body blockquote { font-size: 20px; }
+  .art-summary { padding: 18px 20px 20px; }
+  .art-summary li { font-size: 15.5px; }
 }
 
 /* ============================================================
@@ -4421,6 +4469,7 @@ p { text-wrap: pretty; }
   background: rgba(255, 255, 255, 0.06);
   color: #fff;
 }
+.home-footer-newsletter input::placeholder { color: #fff; opacity: 1; }
 
 .home-footer-newsletter button {
   min-width: 132px;
@@ -4457,14 +4506,38 @@ p { text-wrap: pretty; }
   gap: 20px;
 }
 
-.home-footer-partners div {
-  min-height: 56px;
+/* Mur de partenaires : chaque logo dans une cellule de largeur égale, centré et
+   plafonné en hauteur → rendu uniforme quel que soit l'aspect (wordmark large
+   ou symbole carré). Surcharge le flex hérité de .home-footer-top/bottom. */
+.home-footer-partners > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 26px 44px;
+  min-height: 0;
 }
 
-.home-footer-partners span {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 18px;
-  font-weight: 950;
+.home-footer-partners img {
+  height: 22px;
+  width: auto;
+  max-width: 140px;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+  /* Logos partenaires en blanc monochrome pour rester cohérent sur le footer magenta */
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+.home-footer-partners img:hover {
+  opacity: 1;
+}
+/* Le symbole Airbnb (carré) est optiquement plus petit qu'un wordmark à hauteur
+   égale → on l'agrandit pour équilibrer la rangée (pratique standard de logo-wall). */
+.home-footer-partners img[alt="Airbnb"] {
+  height: 30px;
 }
 
 .home-footer-bottom {
@@ -4584,6 +4657,15 @@ p { text-wrap: pretty; }
   .home-footer-partners div {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  /* Sur mobile : logos en flex centré qui s'enroule (et non empilés en colonne). */
+  .home-footer-partners > div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 22px 28px;
   }
 
   .home-footer-links {
