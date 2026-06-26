@@ -30,7 +30,7 @@
     <a class="skip-link" href="#top">Aller au contenu</a>
     <header class="mc-header">
       <a class="mc-logo" href="${logoHref}" aria-label="Milano Cortina 2026">
-        <img src="assets/home-final/logo-milano-cortina.svg" alt="" />
+        <img src="assets/home-final/logo-milano-cortina.svg?v=2" alt="" />
       </a>
 
       <button

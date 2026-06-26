@@ -10,7 +10,7 @@
       <div class="home-footer-inner">
         <div class="home-footer-top">
           <div>
-            <img class="home-footer-logo" src="assets/home-final/logo-milano-cortina.svg" alt="Milano Cortina 2026" />
+            <img class="home-footer-logo" src="assets/home-final/logo-milano-cortina.svg?v=2" alt="Milano Cortina 2026" />
             <p>Le rendez-vous des Jeux Olympiques et Paralympiques d’hiver.</p>
           </div>
           <form class="newsletter home-footer-newsletter">

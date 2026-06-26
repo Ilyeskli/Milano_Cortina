@@ -90,7 +90,7 @@
   const topbar = `
     <header class="bks-topbar">
       <a class="bks-logo" href="index.html" aria-label="Milano Cortina 2026 — Retour au site">
-        <img src="assets/home-final/logo-milano-cortina.svg" alt="Milano Cortina 2026" />
+        <img src="assets/home-final/logo-milano-cortina.svg?v=2" alt="Milano Cortina 2026" />
       </a>
       <nav class="bks-topnav" aria-label="Navigation Backstages">
         ${navLinks}
