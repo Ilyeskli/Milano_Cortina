@@ -18,7 +18,13 @@
     />
     <meta property="og:image" content="assets/home-final/home-page-final-reference.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="styles.css?v=84" />
+    <link rel="stylesheet" href="styles.css?v=88" />
+    <style>
+      /* Accueil : pas de barre de défilement réservée → le notch reste collé au bord droit.
+         La page reste défilable (trackpad / molette / flèches). */
+      html { scrollbar-width: none; }
+      html::-webkit-scrollbar { width: 0; height: 0; }
+    </style>
   </head>
   <body class="home-page">
     <div id="site-header"></div>
@@ -297,6 +303,14 @@
         </div>
       </section>
     </main>
+
+    <!-- Bouton flottant vers la plateforme de streaming Olympic Backstages -->
+    <a class="bks-float" href="backstages.html" aria-label="Découvrir Olympic Backstages">
+      <span class="bks-float-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+      </span>
+      <span class="bks-float-txt">Olympic Backstages</span>
+    </a>
 
     <div id="site-footer"></div>
     <script src="site-footer.js?v=2"></script>
