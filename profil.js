@@ -63,6 +63,22 @@
       ],
       related: ["laegreid", "klaebo", "shiffrin"],
     },
+    brignone: {
+      tagline: "La skieuse italienne la plus titrée de l'histoire, à domicile.",
+      stats: [
+        ["2", "Gros globes de cristal"],
+        ["3", "Médailles olympiques"],
+        ["2", "Titres de championne du monde"],
+        ["30+", "Victoires en Coupe du monde"],
+      ],
+      bio: "Née en 1990 à Milan et originaire du Val d'Aoste, Federica Brignone est la skieuse italienne la plus titrée de l'histoire. Double lauréate du gros globe de cristal, triple médaillée olympique et championne du monde, elle excelle en slalom géant comme en super-G grâce à un style d'une rare audace et à une lecture de la piste hors pair. Devenue une référence de la vitesse sur le tard, elle a repoussé les limites de la longévité au plus haut niveau. Aux Jeux de Milano Cortina, elle portera les espoirs de tout un pays sur les pentes de Cortina d'Ampezzo.",
+      prog: [
+        ["16 fév · 10:00", "Slalom géant", "Cortina d'Ampezzo"],
+        ["18 fév · 11:00", "Super-G", "Cortina d'Ampezzo"],
+        ["22 fév · 11:00", "Combiné par équipes", "Cortina d'Ampezzo"],
+      ],
+      related: ["shiffrin", "odermatt", "jeanmonnot"],
+    },
   };
 
   const params = new URLSearchParams(location.search);
